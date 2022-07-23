@@ -1,0 +1,34 @@
+.Header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+}
+
+.list_conteiner {
+  width: 70%;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list_item {
+  text-decoration: none;
+  color: wheat;
+  font-size: 1.3em;
+}
+
+.list_item:hover {
+  color: red
+}
+
+.acc {
+  font-size: 2em;
+  color: red;
+}
