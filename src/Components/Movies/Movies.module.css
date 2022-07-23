@@ -1,3 +1,13 @@
 .Body {
-    color: white
+    color: white;
+    width: 90%;
+    margin: auto
+}
+
+.img_conteiner {
+    height: 500px;
+}
+
+.img_conteiner img {
+    height: 500px
 }
