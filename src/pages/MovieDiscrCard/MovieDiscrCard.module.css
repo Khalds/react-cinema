@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.MovieDiscrCard {
+  padding: 60px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper {
+  background: #0e0f11;
+  border-radius: 30px;
+}
+.movie_item {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  height: 100vh;
+  color: #fff;
+  font-size: 14px;
+}
+
+.movie_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.movie_title {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.movie_meta_data {
+  display: flex;
+  gap: 20px;
+}
+
+.movie_actions {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.btn_ticket {
+  background: #e3000b;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn_ticket:hover {
+  background: #fff;
+  color: #e3000b;
+  box-shadow: rgba(255, 1, 1, 0.389) 0px 7px 29px 0px;
+}
+
+.btn_play {
+  background: #fff;
+  padding: 10px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn_play:hover {
+  box-shadow: rgba(255, 1, 1, 0.389) 0px 7px 29px 0px;
+}
+
+.play {
+  height: 35px;
+  width: 35px;
+  color: #e3000b;
+}
+
+.MovieDiscrCard a {
+  color: #8b919b;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+.MovieDiscrCard a:hover {
+  color: #e3000b;
+}
