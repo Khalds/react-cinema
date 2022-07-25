@@ -1,0 +1,54 @@
+.Calendar {
+  padding: 40px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.date_item,
+.cal {
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background: #1c1f23;
+}
+
+.date_item p {
+  color: #8b919b;
+}
+
+.date_item:hover,
+.cal:hover {
+  color: #e3000b;
+  transition: 1s;
+}
+
+.date_item:active,
+.cal:active {
+  background: #e3000b;
+  color: #fff;
+}
+
+.day {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.cal {
+  display: flex;
+  align-items: center;
+}
+.cal_icon {
+  height: 45px;
+  width: 45px;
+}

@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./MovieDiscrCard.module.css"
 import { BsFillPlayFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
+import Calendar from "../../components/Calendar/Calendar"
 
 function MovieDiscrCard() {
   return (
@@ -43,6 +44,7 @@ function MovieDiscrCard() {
           </div>
         </div>
       </div>
+      <Calendar />
     </div>
   )
 }
