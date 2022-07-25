@@ -8,3 +8,16 @@
 .App {
   font-family: "Roboto";
 }
+
+.slick-arrow, .slick-next {
+    display: none!important;
+   }
+
+   .slick-next:before {
+    display: none!important;
+   }
+
+   .slick-prev:before{
+    display: none!important;
+   }
+   
