@@ -2,9 +2,10 @@ import React from "react"
 import styles from "./MovieDiscrCard.module.css"
 import { BsFillPlayFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
-import Calendar from "../../components/Calendar/Calendar"
+// import Calendar from "../../components/Calendar/Calendar"
 
 function MovieDiscrCard() {
+  // const rows = new Array(hall.rows).fill(null)
   return (
     <div className={styles.MovieDiscrCard}>
       <Link to="/"> &#x25C4; Все фильмы</Link>
@@ -16,6 +17,9 @@ function MovieDiscrCard() {
               alt="IMG"
             />
           </div>
+          {/* {rows.map(() => {
+            cols.map
+          })} */}
           <div className={styles.movie_info}>
             <div className={styles.movie_title}>Thor: Love And Thunder</div>
             <div className={styles.movie_genre}>
@@ -44,7 +48,7 @@ function MovieDiscrCard() {
           </div>
         </div>
       </div>
-      <Calendar />
+      {/* <Calendar /> */}
     </div>
   )
 }

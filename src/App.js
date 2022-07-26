@@ -1,22 +1,24 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Homepage/Home"
-import MovieDiscrCard from "./pages/MovieDiscrCard/MovieDiscrCard"
+import Home from "./pages/Homepage/Home";
+import MovieDiscrCard from "./pages/MovieDiscrCard/MovieDiscrCard";
 
-import "./App.css"
+import "./App.css";
+import Sessionspage from "./pages/Sessionspage/Sessionspage";
 
 function App() {
-  return <div className="App">
-     <Routes>
+  return (
+    <div className="App">
+      <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/showtimes" element={<Movies />} />
-        <Route path="/cinema" element={<Cinema />} />
+        <Route path="/sessions" element={<Sessionspage />} />
+        {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
         <Route path="/movieCard" element={<MovieDiscrCard />} />
-        
       </Routes>
-  </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
