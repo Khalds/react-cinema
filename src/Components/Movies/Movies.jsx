@@ -8,6 +8,7 @@ import MainSlider from "../MainSlider/MainSlider";
 import { getMovies } from "../../features/Movies/moviesSlice";
 import { getGenres } from "../../features/Genres/genreSlice";
 import { NavLink } from "react-router-dom";
+import "../../App.css"
 
 const Movies = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const Movies = () => {
       <MainSlider movies={movies} />
       <div className={styles.movies}>
         <h1>Уже в кино</h1>
-        <Slider {...settings}>
+        <Slider {...settings} className="second_slider">
           {movies.map((movie, index) => {
             return (
               <NavLink to={`/movie/${movie._id}`}>

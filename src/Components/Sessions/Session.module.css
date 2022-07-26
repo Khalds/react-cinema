@@ -1,0 +1,89 @@
+.Sessions {
+  color: white;
+}
+
+.hall {
+  width: 90%;
+  margin: auto;
+}
+
+.cards_conteiner {
+  display: flex;
+}
+
+.card {
+  width: 30%;
+  margin: 3% 1%;
+  padding: 2%;
+  border-radius: 14px;
+  background: #212324;
+}
+
+.card_middle_part {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.img_conteiner img {
+  height: 200px;
+  border-radius: 15px;
+}
+
+.genre_time_conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0% 2%;
+}
+
+.genre {
+  display: flex;
+  flex-direction: column;
+}
+.time_limitation {
+  height: 5vh;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #808189;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.time {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: white;
+  color: #808189;
+}
+
+.limitation {
+  width: 33%;
+  text-align: center;
+  border-right: 2px solid #808189;
+}
+
+.cinema {
+  width: 23%;
+  text-align: center;
+  color: #e3000b;
+}
+
+.button {
+  width: 100%;
+  text-align: center;
+}
+
+.genre {
+  font-size: 1em;
+  line-height: 1.6em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 2%;
+  font-style: italic;
+}
