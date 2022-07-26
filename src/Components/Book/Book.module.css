@@ -1,0 +1,24 @@
+.Book_conteiner {
+    width: 90%;
+    margin: 5% auto;
+    color: white
+}
+
+.book {
+    height: 500px;
+    width: 100%;
+    border: 2px solid white;
+    color:white
+}
+
+.table {
+    border: 2px solid white
+}
+
+.tr{ 
+    border: 2px solid white
+}
+
+.td {
+    border: 2px solid white
+}
