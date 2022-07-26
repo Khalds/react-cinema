@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.border {
+  background-color: rgb(0, 0, 0);
+}
+
+.wrapper {
+  padding: 80px 0;
+  width: 80%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.user_data {
+  display: flex;
+  width: 80%;
+}
+
+.personalPage {
+  margin: 0px, 0px 24, 12px;
+  color: aliceblue;
+  font-size: 36px;
+}
+.avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.user_info {
+  background: #212324;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.details {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+.getEmail {
+  cursor: pointer;
+}
+
+.userName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  color: gray;
+}
+
+.orders {
+  color: rgb(244, 240, 240);
+
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  -webkit-box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
+  -moz-box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
+  box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
+  background-color: red;
+  border-radius: 30px;
+  height: 400px;
+  width: 60%;
+  margin: 0 auto;
+}
+.ticket {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  display: flex;
+  padding-top: 20px;
+}
+
+.count {
+  align-items: flex-start;
+}
+.reviewText {
+  color: gray;
+  margin-bottom: -9%;
+  padding-left: 75%;
+}
+.vk {
+  width: 3%;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.discord {
+  width: 4%;
+  border-radius: 100px;
+}
+.science {
+  width: 3%;
+}
+.support {
+  color: gray;
+}
+.allReviews {
+  margin-right: 50%;
+}
+.textSupport {
+  color: gray;
+  font: 18px "Fira Sans", sans-self;
+  margin: 0px 0px 10px;
+}

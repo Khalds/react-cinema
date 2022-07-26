@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+function App() {
+  return <div></div>;
+=======
 import { Route, Routes } from "react-router-dom"
 
 import Home from "./pages/Homepage/Home"
@@ -21,6 +25,7 @@ function App() {
       </Routes>
     </div>
   )
+>>>>>>> 2dcc3123e2c20b9a33968f649f19e196d37c6921
 }
 
-export default App
+export default App;
