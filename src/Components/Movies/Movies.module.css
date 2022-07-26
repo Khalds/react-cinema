@@ -1,23 +1,18 @@
 .Body {
-    color: white;
-    margin: auto;
-    margin-bottom: 5%;
+  color: white;
+  margin: auto;
+  margin-bottom: 5%;
 }
 
 .movies {
-    width: 90%;
-    margin: auto;
-    margin-top: 5%;
+  width: 90%;
+  margin: 5% auto;
 }
 
-.card{
-    margin-top: 5%;
-}
-
-.img_conteiner {
-    height: 300px;
+.card {
+  margin-top: 5%;
 }
 
 .img_conteiner img {
-    height: 300px
+  height: 300px;
 }
