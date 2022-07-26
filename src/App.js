@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Homepage/Home";
-import MovieDiscrCard from "./pages/MovieDiscrCard/MovieDiscrCard";
+import Movie from "./pages/Movie/Movie";
 
 import "./App.css";
 import Sessionspage from "./pages/Sessionspage/Sessionspage";
@@ -17,7 +17,7 @@ function App() {
         {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
-        <Route path="/movieCard" element={<MovieDiscrCard />} />
+        <Route path="/movie" element={<Movie />} />
       </Routes>
     </div>
   );
