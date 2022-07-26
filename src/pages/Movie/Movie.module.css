@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Movie {
+  padding: 60px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper,
+.MovieSession {
+  background: #0e0f11;
+  border-radius: 30px;
+}
+
+.movie_item {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  height: 100vh;
+  color: #fff;
+  font-size: 14px;
+}
+
+.movie_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.movie_title {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.movie_meta_data {
+  display: flex;
+  gap: 20px;
+}
+
+.movie_actions {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.btn_ticket {
+  background: #e3000b;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn_ticket:hover {
+  transition: 1.5s;
+  background: #fff;
+  color: #e3000b;
+  box-shadow: rgba(255, 1, 1, 0.389) 0px 7px 29px 0px;
+}
+
+.btn_play,
+.btn_close {
+  background: #fff;
+  padding: 10px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn_close:hover,
+.btn_play:hover {
+  transition: 1s;
+  box-shadow: rgba(255, 1, 1, 0.389) 0px 7px 29px 0px;
+}
+
+.play {
+  height: 35px;
+  width: 35px;
+  color: #e3000b;
+}
+
+.back_home a {
+  color: #8b919b;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 40px;
+}
+
+.back_home a:hover {
+  color: #e3000b;
+  transition: 1s;
+}
+
+.movie_genre {
+  display: flex;
+}
+
+.movie_genre p {
+  border-right: 1px solid #fff;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.movie_genre p:last-child {
+  border: none;
+}
+
+
+.btn_close {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

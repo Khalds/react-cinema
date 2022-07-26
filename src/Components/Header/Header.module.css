@@ -1,0 +1,42 @@
+.Header {
+  background: #0e0f11;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+  width: 80%;
+  margin: 0 auto;
+  color: #8b919b;
+}
+
+.logo {
+  color: white;
+}
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.list li {
+  list-style-type: none;
+}
+
+.list_item {
+  text-decoration: none;
+  color: #8b919b;
+  font-size: 1.3em;
+}
+
+.list_item:hover {
+  color: #e3000b;
+  transition: 1s;
+}
+
+.acc {
+  font-size: 2em;
+  color: red;
+}

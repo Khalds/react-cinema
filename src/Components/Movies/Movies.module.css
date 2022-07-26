@@ -1,0 +1,18 @@
+.Body {
+  color: white;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+.movies {
+  width: 90%;
+  margin: 5% auto;
+}
+
+.card {
+  margin-top: 5%;
+}
+
+.img_conteiner img {
+  height: 300px;
+}
