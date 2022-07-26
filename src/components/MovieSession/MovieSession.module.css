@@ -1,0 +1,61 @@
+.MovieSessions {
+  color: #fff;
+  width: 30%;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie_hall_inf {
+  background: #2e3239;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 30px 60px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8b919b;
+}
+
+.movie_seats,
+.movie_seat_price,
+.movie_hall_num {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hall_name a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.movie_time {
+  background: #fff;
+  color: #0e0f11;
+  font-weight: 600;
+  display: inline;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 2px 15px;
+}
+
+.movie_title {
+  font-size: 16px;
+}
+
+.movie_data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie_limit {
+  color: #e3000b;
+  font-size: 18px;
+  font-weight: 600;
+}
