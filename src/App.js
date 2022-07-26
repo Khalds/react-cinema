@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-function App() {
-  return <div></div>;
-=======
+import Personal from "./pages/Personal/Personal";
+
 import { Route, Routes } from "react-router-dom"
 
 import Home from "./pages/Homepage/Home"
@@ -20,12 +18,11 @@ function App() {
         {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
-
         <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/personal" element={<Personal />} />
       </Routes>
     </div>
   )
->>>>>>> 2dcc3123e2c20b9a33968f649f19e196d37c6921
 }
 
 export default App;

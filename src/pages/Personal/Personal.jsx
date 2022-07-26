@@ -1,8 +1,11 @@
-import React from "react";
-import styles from "./personalPage.module.css";
-const personalPage = () => {
+import React from "react"
+import Footer from "../../Components/Footer/Footer"
+import Header from "../../Components/Header/Header"
+import styles from "./Personal.module.css"
+const Personal = () => {
   return (
     <div className={styles.border}>
+      <Header />
       <div className={styles.wrapper}>
         <div>
           <h1 className={styles.personalPage}>Личный кабинет</h1>
@@ -71,8 +74,9 @@ const personalPage = () => {
           </a>
         </div>
       </div>
+      <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default personalPage;
+export default Personal
