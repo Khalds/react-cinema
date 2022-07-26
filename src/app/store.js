@@ -9,6 +9,6 @@ export const store = configureStore({
     movieReducer: moviesSlice,
     genreReducer: genreSlice,
     sessionReducer: sessionSlice,
-    hallReducer: hallSlice
+    hallReducer: hallSlice,
   },
 })

@@ -7,8 +7,6 @@ import { MdChair } from "react-icons/md"
 import { GoScreenFull } from "react-icons/go"
 import { ImTicket } from "react-icons/im"
 
-import ReactPlayer from "react-player"
-
 function MovieSession({ hall }) {
   const movies = useSelector((state) => state.movieReducer.movies)
   const { id } = useParams()
@@ -41,7 +39,6 @@ function MovieSession({ hall }) {
             </>
           )
       })}
-     
     </div>
   )
 }
