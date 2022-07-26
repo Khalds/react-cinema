@@ -1,9 +1,9 @@
 import React from "react"
-import styles from "./Calendar.module.css"
+import styles from "./Calend.module.css"
 
 import { BsCalendar3 } from "react-icons/bs"
 
-function Calendar() {
+function Calend() {
   return (
     <div className={styles.Calendar}>
       <div className={styles.date}>
@@ -35,4 +35,4 @@ function Calendar() {
   )
 }
 
-export default Calendar
+export default Calend
