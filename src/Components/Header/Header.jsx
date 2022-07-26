@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom"
 const Header = () => {
   return (
     <div className={styles.Header}>
-
       <div className={styles.wrapper}>
         <div className={styles.logo}>
           <h1>IntoCinema</h1>
@@ -19,7 +18,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/showtimes" className={styles.list_item}>
+              <NavLink to="/sessions" className={styles.list_item}>
                 Расписание
               </NavLink>
             </li>

@@ -4,11 +4,11 @@ import { Link, useParams } from "react-router-dom"
 import Calend from "../../Components/Calendar/Calend"
 import { useDispatch, useSelector } from "react-redux"
 import { getMovies } from "../../features/Movies/moviesSlice"
-import MovieSessionList from "../../Components/MovieSessionList/MovieSessionList"
 import ReactPlayer from "react-player"
 
 import { BsFillPlayFill } from "react-icons/bs"
 import { CgClose } from "react-icons/cg"
+import MovieSessionList from "../../Components/MovieSessionList/MovieSessionList"
 
 function Movie() {
   const movies = useSelector((state) => state.movieReducer.movies)
@@ -88,7 +88,10 @@ function Movie() {
               width="100%"
               height="100vh"
             />
-            <button onClick={(e) => setOpen(!open)} className={styles.btn_close}>
+            <button
+              onClick={(e) => setOpen(!open)}
+              className={styles.btn_close}
+            >
               <CgClose className={styles.play} />
             </button>
           </>
