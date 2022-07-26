@@ -1,11 +1,13 @@
-import { Route, Routes } from "react-router-dom";
+import Personal from "./pages/Personal/Personal";
 
-import Home from "./pages/Homepage/Home";
-import Movie from "./pages/Movie/Movie";
+import { Route, Routes } from "react-router-dom"
 
-import "./App.css";
-import Sessionspage from "./pages/Sessionspage/Sessionspage";
-import Bookingpage from "./pages/Bookingpage/Bookingpage";
+import Home from "./pages/Homepage/Home"
+
+import "./App.css"
+
+import Sessionspage from "./pages/Sessionspage/Sessionspage"
+import Movie from "./pages/Movie/Movie"
 
 function App() {
   return (
@@ -17,10 +19,12 @@ function App() {
         {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
-        <Route path="/movie" element={<Movie />} />
+
+        <Route path="/movie/:id" element={<Movie />} />
+        <Route path="/personal" element={<Personal />} />
       </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

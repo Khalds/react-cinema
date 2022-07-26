@@ -1,15 +1,16 @@
 import React from "react"
 import styles from "./Header.module.css"
 import { VscAccount } from "react-icons/vsc"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
   return (
     <div className={styles.Header}>
-
       <div className={styles.wrapper}>
         <div className={styles.logo}>
-          <h1>IntoCinema</h1>
+          <Link to="/">
+            <h1>IntoCinema</h1>
+          </Link>
         </div>
         <div className={styles.list_conteiner}>
           <ul className={styles.list}>
@@ -41,7 +42,9 @@ const Header = () => {
           </ul>
         </div>
         <div className={styles.user_acc}>
-          <VscAccount className={styles.acc} />
+          <Link to="/personal">
+            <VscAccount className={styles.acc} />
+          </Link>
         </div>
       </div>
     </div>

@@ -11,8 +11,9 @@
   color: #8b919b;
 }
 
-.logo {
+.logo a {
   color: white;
+  text-decoration: none;
 }
 .list {
   width: 100%;
