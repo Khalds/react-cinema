@@ -19,8 +19,8 @@ const Sessions = () => {
 
   const genres = useSelector((state) => state.genreReducer.genres)
 
-  useEffect(() => {
-    dispatch(getSessions())
+  useEffect((id) => {
+    dispatch(getSessions(id))
     dispatch(getHalls())
     dispatch(getMovies())
     dispatch(getGenres())

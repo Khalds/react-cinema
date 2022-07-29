@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Session.module.css";
 import { NavLink } from "react-router-dom";
 
 const MoviesInSession = ({ movies, session, genres }) => {
+
+  
+
   const handleClick = (id) => {
     localStorage.setItem("Session_Id", id);
   };
@@ -35,8 +38,8 @@ const MoviesInSession = ({ movies, session, genres }) => {
                 </div>
               </div>
               <div className={styles.button}>
-                <NavLink to="/booking">
-                  <button onClick={() => handleClick(session._id)}>Купить билеты</button>
+                <NavLink to={`/booking/${session._id}`}>
+                  <button >Купить билеты</button>
                 </NavLink>
               </div>
             </>
