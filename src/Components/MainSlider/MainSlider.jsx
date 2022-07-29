@@ -31,10 +31,7 @@ const MainSlider = ({ movies }) => {
                       : ""}
                     {movie.length % 60 > 0 ? (movie.length % 60) + "мин" : ""}
                   </p>
-                  <p className={styles.movie}>{`${movie.description.slice(
-                    0,
-                    90
-                  )}...`}</p>
+                  <p className={styles.movie}>{`${movie.description}`}</p>
                   <NavLink to={`/movie/${movie._id}`}>
                     <button>Перейти</button>
                   </NavLink>
