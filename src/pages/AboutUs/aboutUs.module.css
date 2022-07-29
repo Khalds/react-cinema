@@ -1,0 +1,79 @@
+
+.aboutUs {
+color: white;
+background-color: black;
+height: 620px;
+font-size: 27px;
+
+}
+
+.aboutUsConteyner {
+    margin-left: 11%;
+  
+}
+
+.aboutСompany {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.about_Box {
+   background-color: #1C1F23;
+   padding: 15px;
+   border-radius: 15px;
+   width: 40%;
+   font-size: 20px;
+   margin-right: 20px;
+  
+}
+
+.about_Box p {
+    margin-top: -6px;
+}
+
+
+.number_about_Box {
+    font-size: 35px;
+}
+
+.about_detailed_information {
+    display: flex; 
+}
+
+.about_detailed_information p {
+    margin-right: 100px;
+    width: 40%;
+    font-size: 20px;
+    margin-right: -130px;
+}
+
+.food {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about_detailed_information span{
+    background-color: red;
+
+}
+.conteyner_of_vacancies_and_contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    text-decoration: none;
+    color: white;
+}
+
+.block_of_vacancies_and_contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    width: 48%;
+    background-color: #1C1F23;
+    margin-top: 30px;
+    border-radius: 12px;
+    height: 110px;
+}
