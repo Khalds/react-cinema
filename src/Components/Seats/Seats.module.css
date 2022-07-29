@@ -1,0 +1,30 @@
+.Book_conteiner {
+    width: 90%;
+    margin: 5% auto;
+    color: white;
+  }
+  
+  .book {
+    height: 500px;
+    width: 100%;
+    color: white;
+    background-color: wheat;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    color:black
+  }
+  
+  
+  
+  .active {
+    color: red
+  }
+  
+  
+  
+  .Book_conteiner {
+    text-align: center;
+    position: relative;
+  }
+  
