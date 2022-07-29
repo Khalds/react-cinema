@@ -1,0 +1,34 @@
+.calendar {
+  position: absolute;
+  right: 18%;
+  top: 82%;
+  width: 300px;
+  background: #1c1f23;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  color: #8b919b;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.calendar button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.calendar button:hover {
+  background-color: #e3000b;
+}
+
+.calendar .react-calendar__tile--now {
+  background-color: #e3000b;
+}
+
+.calendar .react-calendar__tile--active {
+  background-color: #e3000b;
+}

@@ -25,7 +25,12 @@ const MainSlider = ({ movies }) => {
                 </div>
                 <div className={styles.movie_preview}>
                   <h1>{movie.name}</h1>
-                  <p>{movie.length}</p>
+                  <p>
+                    {movie.length / 60 >= 1
+                      ? Math.floor(movie.length / 60) + "ч "
+                      : ""}
+                    {movie.length % 60 > 0 ? (movie.length % 60) + "мин" : ""}
+                  </p>
                   <p className={styles.movie}>{`${movie.description.slice(
                     0,
                     90
