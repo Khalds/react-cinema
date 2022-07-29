@@ -1,0 +1,126 @@
+
+.registration_pages{
+    background-color: black;
+}
+.registrContainer {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+
+    
+    }
+    
+    .registrBlock {
+        display: flex;
+        justify-content: center;
+        height: 550px;
+        width: 35%;
+        padding-top: 30px;
+        border-radius: 60px;
+        background-color: #1C1F23;
+        margin-top: -4%;
+     }
+    
+
+    
+    .registr_email_password_img {
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        padding: 14px 0  0 25px;
+    }
+    
+    .registr_email_password_name {
+        padding-left: 70px;
+        font-size: 20px;
+        width: 300px;
+        height: 50px;
+        border-radius: 60px;
+        box-shadow: inset 0px 0px 25px 0px #888;
+        border: none;
+        outline: none;
+        background-color:white;
+    }
+    
+    .input_box {
+       padding-top: 25px ; 
+    }
+    
+        
+    .btn_eye{
+        border-radius: 100px;
+        cursor: pointer;
+        position: absolute;
+        margin-left: -40px;
+        margin-top: 15px;
+        border: none;
+        outline: none;
+    
+    }
+    
+    .eye_img{
+        width: 20px;
+        height: 20px;
+    
+    }
+    
+    
+    .registr_btn_submit {
+        margin-top: 20px;
+        width: 140px;
+        border-radius: 10px;
+        color: white;
+        background-color: red;
+        height: 30px;
+        border: none;
+    }
+
+    .registr_btn_submit_opacity {
+        margin-top: 20px;
+        width: 140px;
+        border-radius: 10px;
+        color: white;
+        background-color: red;   
+        opacity: 0.6;
+        height: 30px;
+    }
+    
+    .authorization_link {
+        display: flex;
+        justify-content: space-evenly;
+        width: 60%;
+        margin-left: 70px;
+      
+        
+    }
+
+    .error{
+        position: absolute;
+        color: red;
+        margin-left: 2%;
+        font-size: 12px;
+    }
+
+    .registr_text {
+        margin-bottom: -15px;
+    }
+
+    .loading_block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+     
+     }
+     
+     .loading_class {
+         width: 100px;
+         height: 100px;
+         color: red;
+     }
+
+     .authorization_link_text {
+        text-decoration: none;
+        color:lime;
+     }

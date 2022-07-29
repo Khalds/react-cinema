@@ -1,61 +1,64 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
+
 .Footer {
-  height: 20vh;
-  padding: 2% 4%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 20px 40px;
   background-color: #2a2a2a;
   color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
-.conteier__partners {
-  width: 33%;
-  height: 100%;
+
+.footer_top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_bot {
+  text-align: center;
+}
+
+.container_partners {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  gap: 30px;
 }
 
 .partners_list {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   list-style-type: none;
-}
-
-.store_conteiner {
-  width: 33%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-}
-
-.stores {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.store_conteiner img {
-  width: 20%;
-}
-
-.networks_conteiner {
-  width: 33%;
-  display: flex;
-  justify-content: flex-end;
+  gap: 80px;
 }
 
 .networks_list {
-  width: 70%;
   display: flex;
-  justify-content: space-between;
-  align-self: flex-end;
   list-style-type: none;
+  align-items: center;
   font-size: 2em;
+  gap: 20px;
+}
+
+.networks_list a {
+  color: #fff;
+}
+
+.networks_list a:hover {
+  color: #e3000b;
+  transition: 1s;
+}
+
+.partners h1 {
+  text-align: center;
+}
+
+.logo h1 {
+  font-size: 36px;
 }
