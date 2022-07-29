@@ -1,7 +1,15 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 function SingleMovie() {
-  return <div>HEllo</div>
+  return (
+    <>
+    <header>
+    <Link to="/signin">Личный кабинет</Link>
+    </header>
+  <div>HEllo</div>
+  </>
+  )
 }
 
 export default SingleMovie
