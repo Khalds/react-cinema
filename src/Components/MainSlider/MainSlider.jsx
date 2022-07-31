@@ -18,9 +18,9 @@ const MainSlider = ({ movies }) => {
               <div className={styles.main_slider}>
                 <div className={styles.mainImg_conteiner}>
                   <img
-                    src="https://reelcinemas.com/tridion/en-ae/Images/GrayMan-Hero_tcm307-146820.jpg"
-                    alt="topor"
-                    className={styles.img}
+                    src={movie.img_slider}
+                    alt="photo"
+                    className={styles.main_img}
                   ></img>
                 </div>
                 <div className={styles.movie_preview}>
@@ -48,16 +48,16 @@ const MainSlider = ({ movies }) => {
         <Slider
           asNavFor={nav1}
           ref={(slider2) => setNav2(slider2)}
-          slidesToShow={3}
+          slidesToShow={5}
           swipeToSlide={true}
           focusOnSelect={true}
         >
           {movies.map((movie) => {
             return (
               <div className={styles.card}>
-                <div className={styles.img_conteiner}>
+                <div className={styles.sec_img_conteiner}>
                   <img
-                    src="https://reelcinemas.com/tridion/en-ae/Images/Kira-Hero_tcm307-146815.jpg"
+                    src={movie.img}
                     alt="topor"
                   ></img>
                 </div>
