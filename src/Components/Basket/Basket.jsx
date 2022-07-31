@@ -10,8 +10,6 @@ const Basket = () => {
   const session = useSelector((state) => state.sessionReducer.session);
   const dispatch = useDispatch();
 
- 
-
   const handleClick = (arr) => {
     dispatch(createBooking(arr));
     dispatch(getSessionById(chosedSeats[0].session));
@@ -36,7 +34,6 @@ const Basket = () => {
         </div>
         <div className={styles.sum}></div>
       </div>
-
       <div>
         <button onClick={() => handleClick(chosedSeats)}>КУПИТЬ БИЛЕТЫ</button>
       </div>

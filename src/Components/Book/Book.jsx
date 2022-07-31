@@ -6,13 +6,10 @@ import {
   getSessions,
 } from "../../features/Sessions/sessionSlice";
 import { NavLink, useParams } from "react-router-dom";
-import seatSlice, {
-  getSeats,
-  makeBooking,
-} from "../../features/Seat/seatSlice";
+
 import { useState } from "react";
 import { MdOutlineChair } from "react-icons/md";
-import Basket from "../Basket/Basket";
+
 import {
   choseSeat,
   createBooking,
@@ -27,23 +24,33 @@ const Book = () => {
   const bookings = useSelector((state) => state.bookingReducer.bookings);
   const chosedSeats = useSelector((state) => state.bookingReducer.chosedSeats);
   const movies = useSelector((state) => state.movieReducer.movies);
-  const sessions = useSelector((state) => state.sessionReducer.sessions);
 
-  const [purchase, setPurchase] = useState(false);
+  const user = localStorage.getItem("user");
+  const token = localStorage.getItem("token")
+
+  const { id } = useParams();
   const [sum, setSum] = useState(0);
 
   const rows = new Array(session?.hall?.row).fill(null);
   const cols = new Array(session?.hall?.column).fill(null);
 
-  const { id } = useParams();
-
-  const handleBuy = () => {
+  const handleBuy = (arr) => {
+    dispatch(createBooking(arr));
     setSum(sum + session.hall.seatPrice);
   };
 
-  const handleChange = (row, col, session1) => {
-    dispatch(choseSeat({ row, col, id }));
-    setSum(sum + session.hall.seatPrice);
+  const handleChange = (row, col, session1, userId) => {
+    dispatch(choseSeat({ row, col, id, user }));
+    if (
+      !chosedSeats.find((seat) => {
+        if (seat.row === row && seat.col === col) {
+          return true;
+        }
+        return false;
+      })
+    ) {
+      setSum(sum + session.hall.seatPrice);
+    }
   };
 
   useEffect(() => {
@@ -85,9 +92,12 @@ const Book = () => {
               </h5>
             </div>
             <div className={styles.transition}>
-              <NavLink to="/basket" className={styles.button_text}>
-                <button disabled={chosedSeats.length > 0 ? false : true}>
-                  Перейти к оплате {session && sum} ₽
+              <NavLink to="/personal" className={styles.button_text}>
+                <button
+                  disabled={(chosedSeats.length > 0 && token)? false : true}
+                  onClick={() => handleBuy(chosedSeats)}
+                >
+                  Оплатить {session && sum} ₽
                 </button>
               </NavLink>
             </div>

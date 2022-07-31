@@ -1,8 +1,29 @@
-import React from "react"
-import Footer from "../../Components/Footer/Footer"
-import Header from "../../Components/Header/Header"
-import styles from "./Personal.module.css"
+import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Footer from "../../Components/Footer/Footer";
+import Header from "../../Components/Header/Header";
+import { getBooking } from "../../features/Booking/bookingSlice";
+import { getHalls } from "../../features/Halls/hallSlice";
+import { getMovies } from "../../features/Movies/moviesSlice";
+import { getSessions } from "../../features/Sessions/sessionSlice";
+import styles from "./Personal.module.css";
 const Personal = () => {
+  const bookings = useSelector((state) => state.bookingReducer.bookings);
+  const sessions = useSelector((state) => state.sessionReducer.sessions);
+  const movies = useSelector((state) => state.movieReducer.movies);
+  const halls = useSelector((state) => state.hallReducer.halls);
+  const dispatch = useDispatch();
+
+  const user_id = localStorage.getItem("user");
+
+  useEffect(() => {
+    dispatch(getBooking());
+    dispatch(getSessions());
+    dispatch(getMovies());
+    dispatch(getHalls());
+  }, [dispatch]);
+
   return (
     <div className={styles.border}>
       <Header />
@@ -35,18 +56,60 @@ const Personal = () => {
             </div>
           </div>
         </div>
-        <div className={styles.orders}>
-          <p>Название</p>
-          <p>Цена</p>
-          <div>
-            <p>Перейти к заказу</p>
-            <img
-              className={styles.ticket}
-              src="https://cdn-icons-png.flaticon.com/512/708/708721.png"
-              alt="Тут должен быть билет"
-            />
-          </div>
-        </div>
+        <table className={styles.orders}>
+          <thead>
+            <th>Фильм</th>
+            <th>Время сеанса</th>
+            <th>Зал</th>
+            <th>Место</th>
+          </thead>
+          {bookings.map((booking) => {
+            if (booking.user === user_id) {
+              return (
+                <tr>
+                  {sessions.map((session) => {
+                    if (session._id === booking.session) {
+                      return (
+                        <>
+                          {movies.map((movie) => {
+                            if (movie._id === session.movie) {
+                              return (
+                                <>
+                                  {halls.map((hall) => {
+                                    if (hall._id === session.hall) {
+                                      return (
+                                        <>
+                                          <td>{movie.name}</td>
+                                          <td>
+                                            {" "}
+                                            {session.time.slice(8, 10) +
+                                              "." +
+                                              session.time.slice(5, 7) +
+                                              " " +
+                                              session.time.slice(11, 16)}
+                                          </td>
+                                          <td>{hall.name}</td>
+                                          <td>
+                                            {booking.row + " ряд "}
+                                            {booking.col + " место "}
+                                          </td>
+                                        </>
+                                      );
+                                    }
+                                  })}
+                                </>
+                              );
+                            }
+                          })}
+                        </>
+                      );
+                    }
+                  })}
+                </tr>
+              );
+            }
+          })}
+        </table>
         <div className={styles.textSupport}>
           Остались вопросы? Можете связаться с нами
         </div>
@@ -76,7 +139,7 @@ const Personal = () => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Personal
+export default Personal;
