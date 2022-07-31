@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   movies: [],
+
 }
 
 export const getMovies = createAsyncThunk("get/movies", async (thunkAPI) => {

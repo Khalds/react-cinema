@@ -1,7 +1,20 @@
 .MovieSessions {
   color: #fff;
   width: 30%;
-  padding: 20px 40px;
+  padding: 40px;
+  border-bottom: 2px solid #e3000b;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+}
+
+.MovieSessions:last-child {
+  border: none;
+}
+
+.movie_item {
+  width: 30%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -27,19 +40,13 @@
   gap: 5px;
 }
 
-.hall_name a {
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-}
-
 .movie_time {
   background: #fff;
   color: #0e0f11;
   font-weight: 600;
   display: inline;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 14px;
   padding: 2px 15px;
 }
