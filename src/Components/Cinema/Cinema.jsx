@@ -20,7 +20,6 @@ const Cinema = () => {
   return (
     <>
       <Header />
-
       <div className={styles.main}>
         <h1>Кинотеатры</h1>
         <div className={styles.positionContentCentr}>

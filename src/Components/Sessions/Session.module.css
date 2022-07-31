@@ -38,6 +38,7 @@
 .img_container img {
   border-radius: 10px;
   width: 150px;
+  height: 220px;
 }
 
 .genre_time_container {

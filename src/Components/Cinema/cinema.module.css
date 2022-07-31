@@ -2,8 +2,6 @@
   width: 100%;
 }
 .positionContentCentr {
-  width: 100%;
-  height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +23,8 @@
 }
 
 .content {
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
