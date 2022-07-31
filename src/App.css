@@ -7,23 +7,29 @@
 
 .App {
   font-family: "Roboto";
-
 }
 
-.slick-arrow, .slick-next {
-    display: none!important;
-   } */
+.slick-arrow,
+.slick-next {
+  display: none !important;
+}
+*/ .slick-next:before {
+  display: none !important;
+}
 
-  .slick-next:before {
-    display: none!important;
-   }
+.slick-prev:before {
+  display: none !important;
+}
 
-   .slick-prev:before{
-    display: none!important;
-   }
+.slick-prev:before,
+.slick-next:before {
+  display: block !important;
+}
 
 .second_slider > button {
-  display: block!important;
+  display: block !important;
 }
 
-   
+.third_slider > button {
+  display: block !important;
+}
