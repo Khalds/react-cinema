@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { NavLink } from "react-router-dom"
 
+import { IoMdTime } from "react-icons/io"
+import { MdLanguage } from "react-icons/md"
+
 const MainSlider = ({ movies }) => {
   const [nav1, setNav1] = useState()
   const [nav2, setNav2] = useState()
@@ -25,15 +28,23 @@ const MainSlider = ({ movies }) => {
                 </div>
                 <div className={styles.movie_preview}>
                   <h1>{movie.name}</h1>
-                  <p>
-                    {movie.length / 60 >= 1
-                      ? Math.floor(movie.length / 60) + "ч "
-                      : ""}
-                    {movie.length % 60 > 0 ? (movie.length % 60) + "мин" : ""}
-                  </p>
+                  <div className={styles.movie_data}>
+                    <div className={styles.time}>
+                      <IoMdTime />
+                      {movie.length / 60 >= 1
+                        ? Math.floor(movie.length / 60) + "ч "
+                        : ""}
+                      {movie.length % 60 > 0 ? (movie.length % 60) + "м" : ""}
+                    </div>
+                    <div className={styles.country}>
+                      <MdLanguage />
+                      {movie.country}
+                    </div>
+                  </div>
+
                   <p className={styles.movie}>{`${movie.description.slice(
                     0,
-                    90
+                    160
                   )}...`}</p>
                   <NavLink to={`/movie/${movie._id}`}>
                     <button>Перейти</button>
@@ -56,10 +67,7 @@ const MainSlider = ({ movies }) => {
             return (
               <div className={styles.card}>
                 <div className={styles.sec_img_conteiner}>
-                  <img
-                    src={movie.img}
-                    alt="topor"
-                  ></img>
+                  <img src={movie.img}></img>
                 </div>
               </div>
             )

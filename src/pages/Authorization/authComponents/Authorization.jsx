@@ -2,18 +2,12 @@ import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux/es/exports"
 import { auth } from "../../../features/Application/applicationSlice"
 import styles from "../../Authorization/authComponents/authorizationPage.module.css"
-import email_log from "../../../images/email.png"
-import password_img from "../../../images/privacy.png"
 import { Link } from "react-router-dom"
 
 import { AiOutlineLock } from "react-icons/ai"
 import { HiOutlineMail } from "react-icons/hi"
 
-import {
-  AiOutlineEyeInvisible,
-  AiOutlineEye,
-  AiOutlineLoading3Quarters,
-} from "react-icons/ai"
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai"
 
 function Authorization() {
   const [email, setLogin] = useState("")
