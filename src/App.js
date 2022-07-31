@@ -9,7 +9,6 @@ import "./App.css"
 import Sessionspage from "./pages/Sessionspage/Sessionspage"
 import Movie from "./pages/Movie/Movie"
 import Bookingpage from "./pages/Bookingpage/Bookingpage"
-import Films from "./Components/Films/Films"
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Roite path="/aboutus" element={<Aboutus />} /> */}
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/personal" element={<Personal />} />
-        <Route path="/movies" element={<Films />} />
       </Routes>
     </div>
   )
