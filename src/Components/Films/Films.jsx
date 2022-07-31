@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { getMovies } from "../../features/Movies/moviesSlice";
-import CardFilm from "../CardFilm/CardFilm";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import style from "./films.module.css";
+import React, { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { getMovies } from "../../features/Movies/moviesSlice"
+import CardFilm from "../CardFilm/CardFilm"
+import Footer from "../Footer/Footer"
+import Header from "../Header/Header"
+import style from "./films.module.css"
 
 const Films = () => {
-  const dispatch = useDispatch("");
-  const movies = useSelector((state) => state.movieReducer.movies);
-  const [value, setValue] = useState("");
+  const dispatch = useDispatch("")
+  const movies = useSelector((state) => state.movieReducer.movies)
+  const [value, setValue] = useState("")
 
   useEffect(() => {
-    dispatch(getMovies());
-  }, [dispatch]);
+    dispatch(getMovies())
+  }, [dispatch])
 
   const filteredMovies = movies.filter((item) => {
-    return item.name.toLowerCase().includes(value.toLowerCase());
-  });
+    return item.name.toLowerCase().includes(value.toLowerCase())
+  })
 
   return (
     <>
@@ -51,14 +51,14 @@ const Films = () => {
                     movie={item}
                   />
                 </Link>
-              );
+              )
             })}
           </div>
         )}
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Films;
+export default Films

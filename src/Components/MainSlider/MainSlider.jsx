@@ -19,6 +19,7 @@ const MainSlider = ({ movies }) => {
           return (
             <>
               <div className={styles.main_slider}>
+                <div className={styles.block}></div>
                 <div className={styles.mainImg_conteiner}>
                   <img
                     src={movie.img_slider}
@@ -26,6 +27,7 @@ const MainSlider = ({ movies }) => {
                     className={styles.main_img}
                   ></img>
                 </div>
+
                 <div className={styles.movie_preview}>
                   <h1>{movie.name}</h1>
                   <div className={styles.movie_data}>

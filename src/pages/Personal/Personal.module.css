@@ -66,10 +66,8 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  -webkit-box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
-  -moz-box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
   box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
-  background-color: red;
+  background-color: #e3000b;
   border-radius: 30px;
   height: 400px;
   width: 60%;

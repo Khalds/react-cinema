@@ -11,10 +11,7 @@ const MoviesInSession = ({ movies, session, genres, hall, value }) => {
         if (movie._id === session.movie) {
           let date = new Date(Date.parse(session.time))
 
-          if (
-            date.getDay() === new Date().getDay() &&
-            Date.parse(session.time) - Date.parse(new Date()) > 0
-          )
+          if (Date.parse(session.time) - Date.parse(new Date()) > 0)
             return (
               <>
                 <h4>{movie.name}</h4>
