@@ -3,12 +3,11 @@ import style from "./review.module.css";
 import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js";
 import { delReviewById } from "../../features/Reviews/reviewSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 const Review = ({ review, text }) => {
   console.log(review);
-  const lastName = useSelector((state) => state.application.lastName)
   const dispatch = useDispatch();
+const token = useSelector((state) => state.application.token)
 
   const handleDeleteComment = () => {
     dispatch(delReviewById(review._id));
@@ -27,27 +26,29 @@ const Review = ({ review, text }) => {
           </div>
           <div className={style.name_and_data_comment_user}>
             <div className={style.name_comment_user}>
-            <Link to={`/profile/${review.user._id}`}>
-                {review.user.name ? review.user.name : lastName}
-              </Link>
+           ! {review.user}
             </div>
             <div className={style.name_and_data_comment_user}>
               <div className={style.data_comment_user}>
-                {/* {review.date.substring(0, 10) + " / " + review.date.substring(11, 16)} */}
+                {review.date.slice(0, 10) + " / " + review.date.slice(11, 19)}
               </div>
             </div>
           </div>
+          {!token ? (
+            ""
+          ) : (
           <button
-            className={`${
-              review.deleting
-                ? style.delete_btn_comment_user_disabled
-                : style.delete_btn_comment_user
-            }`}
-            onClick={() => handleDeleteComment(review._id)}
-            disabled={review.deleting}
-          >
-            <ion-icon name="close-circle-outline"></ion-icon>
-          </button>
+          className={`${
+            review.deleting
+              ? style.delete_btn_comment_user_disabled
+              : style.delete_btn_comment_user
+          }`}
+          onClick={() => handleDeleteComment(review._id)}
+          disabled={review.deleting}
+        >
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+          )}
         </div>
         <div className={style.text_comment_user}>{text}</div>
       </div>

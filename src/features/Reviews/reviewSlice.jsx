@@ -25,7 +25,7 @@ export const getAllReviews = createAsyncThunk(
 
 export const postReview = createAsyncThunk(
   "post/review",
-  async (comment, thunkAPI) => {
+  async ({comment, user}, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4000/review", {
         method: "POST",
@@ -34,7 +34,7 @@ export const postReview = createAsyncThunk(
         },
         body: JSON.stringify({
           text: comment,
-          
+          user
         }),
       });
       const data = await res.json();

@@ -6,7 +6,6 @@ import style from "./cardFilm.module.css"
 
 const CardFilm = ({ name, limitation, img, movie }) => {
   const genres = useSelector((state) => state.genreReducer.genres)
-  // const movies = useSelector((state) => state.movieReducer.movies);
   const dispatch = useDispatch()
 
   useEffect(() => {

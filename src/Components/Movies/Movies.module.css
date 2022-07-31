@@ -16,3 +16,7 @@
 .img_conteiner img {
   height: 300px;
 }
+
+.third_slider {
+  display: flex;
+}

@@ -7,8 +7,9 @@ import "slick-carousel/slick/slick-theme.css"
 import MainSlider from "../MainSlider/MainSlider"
 import { getMovies } from "../../features/Movies/moviesSlice"
 import { getGenres } from "../../features/Genres/genreSlice"
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../../App.css"
+import CardFilm from "../CardFilm/CardFilm"
 
 const Movies = () => {
   const dispatch = useDispatch()
@@ -35,21 +36,18 @@ const Movies = () => {
       <div className={styles.movies}>
         <h1>Уже в кино</h1>
         <Slider {...settings} className="second_slider">
-          {movies.map((movie, index) => {
+          {movies.map((item, index) => {
             return (
-              <NavLink to={`/movie/${movie._id}`}>
-                <div className={styles.card}>
-                  <div className={styles.img_conteiner}>
-                    <img src={movie.img} alt="topor"></img>
-                  </div>
-                  <p>{movie.name}</p>
-                  {genres.map((genre) => {
-                    if (movie.genre.includes(genre._id)) {
-                      return <p>{genre.name} </p>
-                    }
-                  })}
-                </div>
-              </NavLink>
+              <Link to={`/movie/${item._id}`}>
+                  <CardFilm
+                    key={item._id}
+                    name={item.name}
+                    img={item.img}
+                    limitation={item.limitation}
+                    genresId={item.genre}
+                    movie={item}
+                  />
+                </Link>
             )
           })}
         </Slider>
@@ -57,23 +55,18 @@ const Movies = () => {
       <div className={styles.movies}>
         <h1>Топ рейтинга</h1>
         <Slider {...settings} className="third_slider">
-          {movies.map((movie, index) => {
+          {movies.map((item, index) => {
             return (
-              <NavLink to={`/movie/${movie._id}`}>
-                <div className={styles.card}>
-                  <div className={styles.img_conteiner}>
-                    <img src={movie.img} alt="topor"></img>
-                  </div>
-                  <div className={styles.info}>
-                    <p>{movie.name}</p>
-                    {genres.map((genre) => {
-                      if (movie.genre.includes(genre._id)) {
-                        return <p>{genre.name} </p>
-                      }
-                    })}
-                  </div>
-                </div>
-              </NavLink>
+              <Link to={`/movie/${item._id}`}>
+                  <CardFilm
+                    key={item._id}
+                    name={item.name}
+                    img={item.img}
+                    limitation={item.limitation}
+                    genresId={item.genre}
+                    movie={item}
+                  />
+                </Link>
             )
           })}
         </Slider>
