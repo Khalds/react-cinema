@@ -24,11 +24,7 @@
 }
 
 .content {
-<<<<<<< HEAD
   width: 85%;
-=======
-  width: 100%;
->>>>>>> main
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
