@@ -10,6 +10,10 @@ import ReviewPost from '../../Components/Review/ReviewPost'
 import { BsFillPlayFill } from "react-icons/bs"
 import { CgClose } from "react-icons/cg"
 import MovieSessionList from "../../Components/MovieSessionList/MovieSessionList"
+import { IoMdTime } from "react-icons/io"
+import { MdLanguage } from "react-icons/md"
+import Footer from "../../Components/Footer/Footer"
+import Header from "../../Components/Header/Header"
 
 function Movie() {
   const movies = useSelector((state) => state.movieReducer.movies)
@@ -28,89 +32,96 @@ function Movie() {
   }, [dispatch])
 
   return (
-    <div className={styles.Movie}>
-      <div className={styles.back_home}>
-        <Link to="/"> &#x25C4; Все фильмы</Link>
-      </div>
-      <div className={styles.wrapper}>
-        {movies.map((movie) => {
-          if (movie._id === id)
-            return (
-              <div className={styles.movie_item}>
-                <div className={styles.movie_img}>
-                  <img
-                    src="https://reelcinemas.com//MovieImages/HO00002863.jpg"
-                    alt="IMG"
-                  />
-                </div>
-                <div className={styles.movie_info}>
-                  {!open && (
-                    <>
-                      <div className={styles.movie_title}>{movie.name}</div>
-                      <div className={styles.movie_genre}>
-                        {genres.map((genre) => {
-                          if (movie.genre.includes(genre._id)) {
-                            return <p>{genre.name}</p>
-                          }
-                        })}
-                      </div>
-                      <div className={styles.movie_meta_data}>
-                        <div className={styles.movie_time}>
-                          {movie.length / 60 >= 1
-                            ? Math.floor(movie.length / 60) + "ч "
-                            : ""}
-                          {movie.length % 60 > 0
-                            ? (movie.length % 60) + "мин"
-                            : ""}
+    <>
+      <Header />
+      <div className={styles.Movie}>
+        <div className={styles.back_home}>
+          <Link to="/"> &#x25C4; Все фильмы</Link>
+        </div>
+        <div className={styles.wrapper}>
+          {movies.map((movie) => {
+            if (movie._id === id)
+              return (
+                <div key={movie._id} className={styles.movie_item}>
+                  <div className={styles.movie_img}>
+                    <img src={movie.img} alt="IMG" />
+                  </div>
+                  <div className={styles.movie_info}>
+                    {!open && (
+                      <>
+                        <div className={styles.movie_title}>{movie.name}</div>
+                        <div className={styles.movie_genre}>
+                          {genres.map((genre) => {
+                            if (movie.genre.includes(genre._id)) {
+                              return <p>{genre.name}</p>
+                            }
+                          })}
                         </div>
-                        <div className={styles.movie_country}>
-                          {movie.country}
+                        <div className={styles.movie_meta_data}>
+                          <div className={styles.movie_time}>
+                            <IoMdTime />
+                            {movie.length / 60 >= 1
+                              ? Math.floor(movie.length / 60) < 10
+                                ? "0" + Math.floor(movie.length / 60) + "ч "
+                                : Math.floor(movie.length / 60)
+                              : ""}
+                            {movie.length % 60 > 0
+                              ? (movie.length % 60) + "м"
+                              : ""}
+                          </div>
+                          <div className={styles.movie_country}>
+                            <MdLanguage />
+
+                            {movie.country}
+                          </div>
+                          <div className={styles.movie_limit}>
+                            {movie.limitation}+
+                          </div>
                         </div>
-                        <div className={styles.movie_limit}>
-                          {movie.limitation}+
+                        <div className={styles.movie_producer}>
+                          Director: {movie.producer}
                         </div>
-                      </div>
-                      <div className={styles.movie_producer}>
-                        Director: {movie.producer}
-                      </div>
-                      <div className={styles.movie_descr}>
-                        {movie.description}
-                      </div>
-                    </>
-                  )}
-                  {open && (
-                    <>
-                      <ReactPlayer
-                        url="https://www.youtube.com/watch?v=pAr7v_9I78s"
-                        playing={true}
-                        controls={false}
-                        width="100%"
-                      />
-                    </>
-                  )}
-                  <div className={styles.movie_actions}>
-                    <button className={styles.btn_ticket}>BUY TICKET</button>
-                    <button
-                      onClick={(e) => setOpen(!open)}
-                      className={styles.btn_play}
-                    >
-                      {!open && <BsFillPlayFill className={styles.play} />}
-                      {open && <CgClose className={styles.play} />}
-                    </button>
+                        <div className={styles.movie_descr}>
+                          {movie.description}
+                        </div>
+                      </>
+                    )}
+                    {open && (
+                      <>
+                        <ReactPlayer
+                          url={movie.trailer}
+                          playing={true}
+                          controls={false}
+                          width="100%"
+                        />
+                      </>
+                    )}
+                    <div className={styles.movie_actions}>
+                      <button className={styles.btn_ticket}>BUY TICKET</button>
+                      <button
+                        onClick={(e) => setOpen(!open)}
+                        className={styles.btn_play}
+                      >
+                        {!open && <BsFillPlayFill className={styles.play} />}
+                        {open && <CgClose className={styles.play} />}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-        })}
-      </div>
+              )
+          })}
+        </div>
 
-      <Calend value={value} onChange={onChange} />
+        <Calend value={value} onChange={onChange} />
 
-      <div className={styles.MovieSession}>
-        <MovieSessionList value={value} />
+        <div className={styles.MovieSession}>
+          <MovieSessionList value={value} />
+        </div>
       </div>
       <ReviewPost />
     </div>
+      <Footer />
+    </>
   )
 }
 

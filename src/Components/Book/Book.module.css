@@ -1,18 +1,88 @@
 .Book {
-  width: 90%;
-  height: 95vh;
+  width: 70%;
+  height: 100vh;
   margin: auto;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
   position: relative;
+  background-color: #212324;
+}
+
+.hallName_conteiner {
+  margin-top: 2%;
+}
+
+.session_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2em;
+}
+
+.time_price_conteiner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+}
+
+.sessionDate_conteiner {
+  border-radius: 0.6em;
+  background-color: white;
+  text-align: center;
+  padding: 1%;
+  width: 25%;
+  font-size: 1em;
+}
+
+.sessionDate_conteiner h5 {
+  color: grey;
+}
+
+.transition {
+  height: 100%;
+  background-color: #e3000b;
+  border-radius: 0.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.transition button {
+  height: 100%;
+
+  border: none;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button_text {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.seatPrice_conteiner {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 table {
-   font-size: 3em;
-   border-spacing: 15px 15px; 
+  font-size: 2em;
+  border-spacing: 15px 15px;
 }
 
 tr {
@@ -33,18 +103,14 @@ td {
 .right_rowName {
   vertical-align: top;
   font-size: 0.4em;
-  vertical-align:middle;
+  vertical-align: middle;
   padding-right: 15%;
 }
 .active {
-  color: red;
+  color: #e3000b;
   /* pointer-events: none;
   cursor: not-allowed; */
-
-  
 }
-
-
 
 .Book_conteiner {
   text-align: center;
@@ -52,38 +118,21 @@ td {
 }
 
 .seats_numbers {
-  position: relative
+  position: relative;
 }
 
 .seats_numbers p {
   position: absolute;
-  font-size: 15px;
-  top:10px;
-  right: 20px;
+  font-size: 0.3em;
+  top: 0.6em;
+  right: 1.2em;
 }
 
 .line {
   text-align: center;
-  width: 65%;
-  height:25px;
+  width: 80%;
+  height: 25px;
   margin-top: 10%;
   border-radius: 0 0 50% 50%;
   box-shadow: 1px -26px 20px 0px rgba(192, 4, 4, 0.6);
-}
-
-.transition {
-  position: absolute;
-  right: 25%;
-  background-color: #e3000b;
-  border-radius: 40px;
-  right: 1%
-}
-
-.transition button {
-  background-color: transparent;
-  border: none;
-  color:white;
-  font-size: 1.2em;
-  width: 230px;
-
 }

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 const initialState = {
   signingUp: false,
   signingIn: false,
@@ -7,11 +7,11 @@ const initialState = {
 
   token: localStorage.getItem("token"),
   user: localStorage.getItem("user"),
-};
+}
 
 export const createUser = createAsyncThunk(
   "registration/post",
-  async ({name, lastName, login, email, password }, thunkAPI) => {
+  async ({ name, lastName, login, email, password }, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4000/registration", {
         method: "POST",
@@ -20,25 +20,23 @@ export const createUser = createAsyncThunk(
           lastName,
           login,
           email,
-          password
+          password,
         }),
         headers: {
           "Content-type": "application/json",
         },
-      });
-      const data = await res.json();
-      console.log(data);
+      })
+      const data = await res.json()
       if (data.message) {
-        return thunkAPI.rejectWithValue(data.message);
+        return thunkAPI.rejectWithValue(data.message)
       } else {
-        return thunkAPI.fulfillWithValue(data);
+        return thunkAPI.fulfillWithValue(data)
       }
     } catch (error) {
-
-    return   thunkAPI.rejectWithValue(error);
+      return thunkAPI.rejectWithValue(error)
     }
   }
-);
+)
 
 export const auth = createAsyncThunk(
   "login/post",
@@ -50,26 +48,25 @@ export const auth = createAsyncThunk(
         headers: {
           "Content-type": "application/json",
         },
-      });
-      const data = await res.json();
+      })
+      const data = await res.json()
       if (data.message) {
-        return thunkAPI.rejectWithValue(data.message);
+        return thunkAPI.rejectWithValue(data.message)
       } else {
-        localStorage.setItem("token", data.accessToken);
-        localStorage.setItem("user", data.user.id);
-     
-        return thunkAPI.fulfillWithValue(data);
+        localStorage.setItem("token", data.accessToken)
+        localStorage.setItem("user", data.user.id)
+
+        return thunkAPI.fulfillWithValue(data)
       }
     } catch (error) {
-      
-       thunkAPI.rejectWithValue(error);
+      thunkAPI.rejectWithValue(error)
     }
   }
-);
+)
 
 export const exit = createAsyncThunk("exit", async (_, thunkAPI) => {
-  localStorage.removeItem("token");
-});
+  localStorage.removeItem("token")
+})
 
 const application = createSlice({
   name: "user",
@@ -78,44 +75,37 @@ const application = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(createUser.fulfilled, (state, action) => {
-        state.signingUp = false;
-        state.token = action.payload.token;
+        state.signingUp = false
+        state.token = action.payload.token
         state.user = action.payload.user
         state.registered = true
-        
-       
       })
       .addCase(createUser.pending, (state, action) => {
-        state.signingUp = true;
+        state.signingUp = true
         state.registrError = null
       })
       .addCase(createUser.rejected, (state, action) => {
-        console.log(action.payload);
+        console.log(action.payload)
         state.registrError = action.payload
         state.signingUp = false
-      });
+      })
 
-      builder
+    builder
       .addCase(auth.fulfilled, (state, action) => {
         state.signingIn = false
-      state.token =  state.token =  action.payload.token
+        state.token = state.token = action.payload.token
         state.authError = null
         state.user = action.payload.user.id
-
       })
       .addCase(auth.pending, (state, action) => {
         state.signingIn = true
-       
-
       })
       .addCase(auth.rejected, (state, action) => {
-        state.authError  = action.payload
+        state.authError = action.payload
         state.signingIn = false
         state.token = null
       })
-  }
-
-});
-
+  },
+})
 
 export default application.reducer
