@@ -20,7 +20,7 @@ function MovieSessionList({ value }) {
   return (
     <div className={styles.c}>
       <div className={styles.hall_name}>
-        <a href="">Grozny Cinema</a>
+        <a href="/">Grozny Cinema</a>
       </div>
       {halls.map((hall) => {
         return <MovieSession hall={hall} value={value} />

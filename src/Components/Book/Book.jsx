@@ -43,7 +43,7 @@ const Book = () => {
   const handleChange = (row, col, session1) => {
     dispatch(choseSeat({ row, col, id }));
     // setSum(sum + session.hall.seatPrice)
-    console.log(row, col, id);
+
   };
 
   useEffect(() => {

@@ -19,12 +19,15 @@ const Sessions = () => {
 
   const genres = useSelector((state) => state.genreReducer.genres)
 
-  useEffect((id) => {
-    dispatch(getSessions(id))
-    dispatch(getHalls())
-    dispatch(getMovies())
-    dispatch(getGenres())
-  }, [dispatch])
+  useEffect(
+    (id) => {
+      dispatch(getSessions(id))
+      dispatch(getHalls())
+      dispatch(getMovies())
+      dispatch(getGenres())
+    },
+    [dispatch]
+  )
 
   return (
     <div className={styles.Sessions}>
@@ -33,12 +36,13 @@ const Sessions = () => {
           <>
             <div className={styles.hall}>
               <h1>{hall.name}</h1>
-              <div className={styles.cards_conteiner}>
+              <div className={styles.cards_container}>
                 {sessions.map((session) => {
                   if (session.hall === hall._id) {
                     return (
                       <div className={styles.card}>
                         <MoviesInSession
+                          hall={hall}
                           movies={movies}
                           session={session}
                           genres={genres}
