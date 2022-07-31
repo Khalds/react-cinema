@@ -13,6 +13,7 @@ import Basket from "./Components/Basket/Basket"
 import AboutUsPages from "./pages/AboutUs/AboutUsPages"
 import Authorization from "./pages/Authorization/AuthorizationPages"
 import Registration from "./pages/Registration/RegistrationPages"
+import Films from "./Components/Films/Films"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/signup" element={<Registration />} />
         <Route path="/signin" element={<Authorization />} />
         <Route path="/aboutUs" element={<AboutUsPages />} />
+        <Route path="/movies" element={<Films />} />
       </Routes>
     </div>
   )
