@@ -1,0 +1,46 @@
+.wrapperMain {
+    width: 80%;
+    margin: auto;
+}
+
+.film {
+    margin-top: 2em;
+    color: #fff;
+}
+
+.search {
+    width: 600px;
+    margin: auto;
+    padding: 10px;
+    margin-top: 30px;
+  }
+  .search input {
+    width: 600px;
+    margin: auto;
+    padding: 10px;
+    padding-left: 4%;
+    font-size: 1.2em;
+    border-radius: 14px;
+    border-style: none;
+    outline: none;
+    border: 1px solid rgb(165, 165, 165);
+    resize: vertical;
+  }
+
+.netCardFilms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+.sector_clear {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 650px;
+    color: rgb(95, 85, 85);
+    font-weight: 500;
+  }
+
+

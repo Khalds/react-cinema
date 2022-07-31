@@ -21,7 +21,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "ymaps": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

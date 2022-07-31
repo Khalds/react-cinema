@@ -5,6 +5,7 @@ import Calend from "../../Components/Calend/Calend"
 import { useDispatch, useSelector } from "react-redux"
 import { getMovies } from "../../features/Movies/moviesSlice"
 import ReactPlayer from "react-player"
+import ReviewPost from '../../Components/Review/ReviewPost'
 
 import { BsFillPlayFill } from "react-icons/bs"
 import { CgClose } from "react-icons/cg"
@@ -117,6 +118,8 @@ function Movie() {
           <MovieSessionList value={value} />
         </div>
       </div>
+      <ReviewPost />
+    </div>
       <Footer />
     </>
   )
