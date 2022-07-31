@@ -1,19 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    sessions: [],
+  sessions: [],
 };
 
-export const getSessions = createAsyncThunk("get/sessions", async (thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:4000/session");
-    const data = await res.json();
+export const getSessions = createAsyncThunk(
+  "get/sessions",
+  async (thunkAPI) => {
+    try {
+      const res = await fetch("http://localhost:4000/session");
+      const data = await res.json();
 
-    return data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
 
 export const sessionSlice = createSlice({
   name: "sessions",

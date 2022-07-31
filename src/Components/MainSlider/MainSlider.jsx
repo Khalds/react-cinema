@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import Slider from "react-slick"
-import styles from "./MainSlider.module.css"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import { NavLink } from "react-router-dom"
+import React, { useState } from "react";
+import Slider from "react-slick";
+import styles from "./MainSlider.module.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from "react-router-dom";
 
 const MainSlider = ({ movies }) => {
-  const [nav1, setNav1] = useState()
-  const [nav2, setNav2] = useState()
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
 
   return (
     <div className={styles.Slider}>
@@ -36,7 +36,7 @@ const MainSlider = ({ movies }) => {
                 </div>
               </div>
             </>
-          )
+          );
         })}
       </Slider>
       <div className={styles.secondray_slide}>
@@ -57,12 +57,12 @@ const MainSlider = ({ movies }) => {
                   ></img>
                 </div>
               </div>
-            )
+            );
           })}
         </Slider>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainSlider
+export default MainSlider;

@@ -8,7 +8,7 @@ import MainSlider from "../MainSlider/MainSlider";
 import { getMovies } from "../../features/Movies/moviesSlice";
 import { getGenres } from "../../features/Genres/genreSlice";
 import { NavLink } from "react-router-dom";
-import "../../App.css"
+import "../../App.css";
 
 const Movies = () => {
   const dispatch = useDispatch();

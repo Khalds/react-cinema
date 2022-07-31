@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-  padding: 80px 0;
+  padding: 45px 0 30px 0;
   width: 80%;
   margin: 0 auto;
 
@@ -48,8 +48,18 @@
   padding: 20px;
   gap: 20px;
 }
+.capabilities {
+  font-size: 23px;
+  margin: 0px, 0px 24, 12px;
+}
 .getEmail {
+  background: none;
+  color: red;
   cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  width: 80px;
+  height: 30px;
 }
 
 .userName {
@@ -65,7 +75,6 @@
 
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
   -webkit-box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
   -moz-box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
   box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
@@ -74,15 +83,20 @@
   height: 400px;
   width: 60%;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 .ticket {
-  height: 100px;
-  width: 100px;
+  transition: 0.5s; /* Время эффекта */
+  height: 80px;
+  width: 80px;
   cursor: pointer;
   display: flex;
   padding-top: 20px;
+  padding-left: 18%;
 }
-
+.ticket:hover {
+  transform: scale(1.2); /* Увеличиваем масштаб */
+}
 .count {
   align-items: flex-start;
 }
@@ -113,4 +127,49 @@
   color: gray;
   font: 18px "Fira Sans", sans-self;
   margin: 0px 0px 10px;
+}
+.exitWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.exit {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.getEmail {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-right: 90%;
+}
+
+.getEmail span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.getEmail span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.getEmail:hover span {
+  padding-right: 25px;
+}
+
+.getEmail:hover span:after {
+  opacity: 1;
+  right: 0;
 }
