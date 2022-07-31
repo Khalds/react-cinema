@@ -12,11 +12,8 @@ const Sessions = () => {
   const dispatch = useDispatch()
 
   const halls = useSelector((state) => state.hallReducer.halls)
-
   const sessions = useSelector((state) => state.sessionReducer.sessions)
-
   const movies = useSelector((state) => state.movieReducer.movies)
-
   const genres = useSelector((state) => state.genreReducer.genres)
 
   useEffect((id) => {
