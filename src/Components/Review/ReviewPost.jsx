@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllReviews, postReview } from "../../features/Reviews/reviewSlice";
-import Review from "./Review";
-import style from "./review.module.css";
+import React, { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getAllReviews, postReview } from "../../features/Reviews/reviewSlice"
+import Review from "./Review"
+import style from "./review.module.css"
 
 const ReviewPost = () => {
   const dispatch = useDispatch();
@@ -10,12 +10,18 @@ const ReviewPost = () => {
   const reviews = useSelector((state) => state.reviewReducer.reviews);
   const token = useSelector((state) => state.application.token);
 console.log(token)
+
+  // const dispatch = useDispatch()
+  // const [comment, setComment] = useState("")
+  // const reviews = useSelector((state) => state.reviewReducer.reviews)
+  // // const token = useSelector((state) => state.application.token);
+
   const handleAddComment = () => {
     if (comment.trim().length) {
-      dispatch(postReview(comment));
+      dispatch(postReview(comment))
     }
-    setComment("");
-  };
+    setComment("")
+  }
 
   useEffect(() => {
     dispatch(getAllReviews());
@@ -48,14 +54,28 @@ console.log(token)
             cols="30"
             rows="10"
           ></textarea>
+
+          <img
+            src={"https://cdn-icons-png.flaticon.com/512/147/147140.png"}
+            alt="avatar"
+            className={style.image_config}
+          />
+        </div>
+        <div className={style.comments_field}>
+          {/* <input
+            // disabled={!token ? true : false}
+            onChange={(e) => setComment(e.target.value)}
+            value={comment}
+            placeholder={"Войдите в аккаунт, чтобы оставить комментарий"}
+          ></input> */}
           <button onClick={handleAddComment}>Добавить</button>
         </div>
       </div>
       {reviews?.map((item) => {
-        return <Review review={item} key={item._id} text={item.text} />;
+        return <Review review={item} key={item._id} text={item.text} />
       })}
     </div>
-  );
-};
+  )
+}
 
-export default ReviewPost;
+export default ReviewPost

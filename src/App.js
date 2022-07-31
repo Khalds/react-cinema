@@ -26,7 +26,7 @@ function App() {
         {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
-
+        <Route path="/movies" element={<Films />} />
         <Route path="/cinema" element={<Cinema />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/personal" element={<Personal />} />

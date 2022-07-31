@@ -40,10 +40,7 @@ const Movies = () => {
               <NavLink to={`/movie/${movie._id}`}>
                 <div className={styles.card}>
                   <div className={styles.img_conteiner}>
-                    <img
-                      src={movie.img}
-                      alt="topor"
-                    ></img>
+                    <img src={movie.img} alt="topor"></img>
                   </div>
                   <p>{movie.name}</p>
                   {genres.map((genre) => {
@@ -65,17 +62,16 @@ const Movies = () => {
               <NavLink to={`/movie/${movie._id}`}>
                 <div className={styles.card}>
                   <div className={styles.img_conteiner}>
-                    <img
-                      src={movie.img}
-                      alt="topor"
-                    ></img>
+                    <img src={movie.img} alt="topor"></img>
                   </div>
-                  <p>{movie.name}</p>
-                  {genres.map((genre) => {
-                    if (movie.genre.includes(genre._id)) {
-                      return <p>{genre.name} </p>
-                    }
-                  })}
+                  <div className={styles.info}>
+                    <p>{movie.name}</p>
+                    {genres.map((genre) => {
+                      if (movie.genre.includes(genre._id)) {
+                        return <p>{genre.name} </p>
+                      }
+                    })}
+                  </div>
                 </div>
               </NavLink>
             )
