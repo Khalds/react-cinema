@@ -13,6 +13,11 @@
   width: 100%;
   height: 100%;
 }
+
+.mainImg_conteiner img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
 /* .mainImg_conteiner::after {
     content: '';
     display: block;
@@ -28,7 +33,6 @@
 .main_img {
   width: 100%;
   height: 100%;
-  
 }
 
 .card {
@@ -38,32 +42,29 @@
 
 .secondray_slide {
   position: absolute;
-  top: 80%;
   right: 0px;
-  bottom: 0%;
+  bottom: 0;
   left: 5%;
 }
 
-.sec_img_conteiner  {
-  height: 6em;
+.sec_img_conteiner {
+  height: 12em;
   width: 20em;
-  margin: 0px;
-
   overflow: hidden;
-
 }
 
 .sec_img_conteiner img {
-  width: 60%;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 20px;
 
   display: block;
   box-shadow: inset 0px 0px 50px 0px #000;
-  overflow: hidden
-}
+  overflow: hidden;
 
+  object-fit: cover;
+  object-position: 50% 30%;
+}
 
 .movie_preview {
   position: absolute;
@@ -72,19 +73,33 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 30%;
+  width: 35%;
 }
 
 .movie_preview h1 {
   color: #000;
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
 }
 
 .movie_preview p {
   font-size: 16px;
-  font-family: sans-serif;
   color: #000;
+}
+
+.country,
+.time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.movie_data {
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .movie_preview button {

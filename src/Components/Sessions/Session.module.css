@@ -75,6 +75,21 @@
   color: #000;
 }
 
+.meta_data {
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.country,
+.length {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .limitation {
   flex: 1;
   text-align: center;
@@ -100,7 +115,7 @@
 }
 
 .genre {
-  font-size: 1em;
+  font-size: 14px;
   line-height: 1.6em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
