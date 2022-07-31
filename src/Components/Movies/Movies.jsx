@@ -20,7 +20,7 @@ const Movies = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
   }
 
@@ -41,7 +41,7 @@ const Movies = () => {
                 <div className={styles.card}>
                   <div className={styles.img_conteiner}>
                     <img
-                      src="https://reelcinemas.com//MovieImages/HO00002908.jpg"
+                      src={movie.img}
                       alt="topor"
                     ></img>
                   </div>
@@ -59,14 +59,14 @@ const Movies = () => {
       </div>
       <div className={styles.movies}>
         <h1>Топ рейтинга</h1>
-        <Slider {...settings}>
+        <Slider {...settings} className="third_slider">
           {movies.map((movie, index) => {
             return (
               <NavLink to={`/movie/${movie._id}`}>
                 <div className={styles.card}>
                   <div className={styles.img_conteiner}>
                     <img
-                      src="https://reelcinemas.com//MovieImages/HO00002908.jpg"
+                      src={movie.img}
                       alt="topor"
                     ></img>
                   </div>

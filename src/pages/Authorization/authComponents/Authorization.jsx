@@ -1,43 +1,43 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux/es/exports";
-import { auth } from "../../../features/Application/applicationSlice";
-import styles from "../../Authorization/authComponents/authorizationPage.module.css";
-import email_log from "../../../images/email.png";
-import password_img from "../../../images/privacy.png";
-import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux/es/exports"
+import { auth } from "../../../features/Application/applicationSlice"
+import styles from "../../Authorization/authComponents/authorizationPage.module.css"
+import email_log from "../../../images/email.png"
+import password_img from "../../../images/privacy.png"
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 function Authorization() {
-  const [email, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
-  const error_block = useSelector((state) => state.application.authError);
-  const [eye, setEye] = useState(false);
-  const [error_blo, setError] = useState(error_block);
+  const [email, setLogin] = useState("")
+  const [password, setPassword] = useState("")
+  const dispatch = useDispatch()
+  const error_block = useSelector((state) => state.application.authError)
+  const [eye, setEye] = useState(false)
+  const [error_blo, setError] = useState(error_block)
 
   const toggleBtn = () => {
-    setEye((prevState) => !prevState);
-  };
+    setEye((prevState) => !prevState)
+  }
 
   const handleAuthEmail = (e) => {
-    setLogin(e.target.value);
-  };
+    setLogin(e.target.value)
+  }
 
   const handleAuthPassword = (e) => {
-    setPassword(e.target.value);
-  };
+    setPassword(e.target.value)
+  }
 
   const handleCome = () => {
-    dispatch(auth({ email, password }));
-    setLogin("");
-    setPassword("");
-  };
+    dispatch(auth({ email, password }))
+    setLogin("")
+    setPassword("")
+  }
 
   setTimeout(() => {
     if (error_blo) {
-      setError(null);
+      setError(null)
     }
-  }, 2000);
+  }, 2000)
 
   return (
     <>
@@ -70,7 +70,7 @@ function Authorization() {
                 />
                 <input
                   className={styles.email_password_name}
-                  placeholder="Ведите Пороль"
+                  placeholder="Ведите Пароль"
                   type={eye ? "text" : "password"}
                   value={password}
                   onChange={(e) => handleAuthPassword(e)}
@@ -101,7 +101,12 @@ function Authorization() {
                 <div className={styles.authorization}>
                   <p>У вас нет аккаунта ?</p>{" "}
                   <p>
-                    <Link className={styles.authorization_link_text} to="/signup">Зарегистрироватся</Link>
+                    <Link
+                      className={styles.authorization_link_text}
+                      to="/signup"
+                    >
+                      Зарегистрироватся
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -110,7 +115,7 @@ function Authorization() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Authorization;
+export default Authorization
