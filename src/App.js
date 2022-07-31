@@ -13,6 +13,7 @@ import Basket from "./Components/Basket/Basket"
 import AboutUsPages from "./pages/AboutUs/AboutUsPages"
 import Authorization from "./pages/Authorization/AuthorizationPages"
 import Registration from "./pages/Registration/RegistrationPages"
+import Films from "./Components/Films/Films"
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
-
+        <Route path="/movies" element={<Films />} />
         <Route path="/cinema" element={<Cinema />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/personal" element={<Personal />} />

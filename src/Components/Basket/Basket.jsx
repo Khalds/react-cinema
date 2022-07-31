@@ -32,7 +32,9 @@ const Basket = () => {
             )
           })}
         </div>
-        <div className={styles.sum}></div>
+        <div className={styles.sum}>
+          
+        </div>
       </div>
 
       <div>
