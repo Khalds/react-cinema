@@ -1,14 +1,13 @@
-import React from "react";
-import styles from "./cardCinema.module.css";
+import React from "react"
+import styles from "./cardCinema.module.css"
 
 const CardCinema = ({ img, title, amountHall, placesHall, mood }) => {
-  console.log(img   );
   return (
     <div className={styles.flexDiv}>
       <div className={styles.cinemaWrapperShadow}>
         <div
           className={styles.cinemaWrapperPosition}
-          style={{ background: `url(${ img })` }}
+          style={{ background: `url(${img})` }}
         >
           <div className={styles.cinemaWrapperInformation}>
             <div>
@@ -22,7 +21,7 @@ const CardCinema = ({ img, title, amountHall, placesHall, mood }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CardCinema;
+export default CardCinema

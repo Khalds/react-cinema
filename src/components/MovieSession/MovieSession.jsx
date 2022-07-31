@@ -37,15 +37,20 @@ function MovieSession({ hall, value }) {
             date = new Date(Date.parse(session.time))
 
             movieHour =
-              date.getHours() +
-              (movie.length / 60 + date.getHours() >= 1
-                ? Math.floor(movie.length / 60)
-                : 0)
+              (movie.length % 60) + date.getMinutes() < 60
+                ? date.getHours() +
+                  (movie.length / 60 + date.getHours() >= 1
+                    ? Math.floor(movie.length / 60)
+                    : 0)
+                : date.getHours() + Math.floor(movie.length / 60) + 1
+
             movieMin =
-              date.getMinutes() +
-              ((movie.length % 60) + date.getMinutes() > 0
-                ? movie.length % 60
-                : 0)
+              (movie.length % 60) + date.getMinutes() < 60
+                ? date.getMinutes() +
+                  ((movie.length % 60) + date.getMinutes() > 0
+                    ? movie.length % 60
+                    : 0)
+                : 0 + ((movie.length % 60) + date.getMinutes() - 60)
 
             filterDate =
               (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) +
@@ -54,21 +59,22 @@ function MovieSession({ hall, value }) {
                 ? "0" + date.getMinutes()
                 : date.getMinutes()) +
               " - " +
-              (movieHour < 10 ? "0" + movieHour : movieHour) +
+              ((movieHour < 24 ? movieHour : 0) < 10
+                ? "0" + (movieHour < 24 ? movieHour : 0 + (movieHour - 24))
+                : movieHour < 24
+                ? movieHour
+                : 0) +
               ":" +
               (movieMin < 10 ? "0" + movieMin : movieMin)
             if (
               value.getDate() === date.getDate() &&
-              value.getTime() - date.getTime() < 0
+              Date.parse(session.time) - Date.parse(new Date()) > 0
             )
               return (
                 <div className={styles.movie_item}>
                   <div className={styles.movie_title}>{movie.name}</div>
                   <div className={styles.movie_data}>
-                    <div className={styles.movie_time}>
-                      {filterDate}
-                      {console.log(date.toUTCString())}
-                    </div>
+                    <div className={styles.movie_time}>{filterDate}</div>
                     <div className={styles.movie_limit}>
                       {movie.limitation}+
                     </div>

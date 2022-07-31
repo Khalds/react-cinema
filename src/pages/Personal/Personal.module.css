@@ -64,7 +64,8 @@
   color: rgb(244, 240, 240);
   text-align: center;
   width: 100%;
-  background-color: #212324;
+  box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
+  background-color: #e3000b;
   border-radius: 30px;
   height: 400px;
   width: 80%;

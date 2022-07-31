@@ -1,4 +1,4 @@
-import Personal from "./pages/Personal/Personal";
+import Personal from "./pages/Personal/Personal"
 
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Homepage/Home";
@@ -12,6 +12,7 @@ import Movie from "./pages/Movie/Movie";
 import AboutUsPages from "./pages/AboutUs/AboutUsPages";
 import Authorization from "./pages/Authorization/AuthorizationPages";
 import Registration from "./pages/Registration/RegistrationPages";
+import Films from "./Components/Films/Films";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         {/* <Route path="/cinema" element={<Cinema />} />
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
-
+        <Route path="/movies" element={<Films />} />
         <Route path="/cinema" element={<Cinema />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/personal" element={<Personal />} />
@@ -32,7 +33,7 @@ function App() {
         <Route path="/aboutUs" element={<AboutUsPages />} />
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
