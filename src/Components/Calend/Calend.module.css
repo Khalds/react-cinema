@@ -1,4 +1,4 @@
-.Calendar {
+.Calend {
   padding: 40px;
   color: #fff;
   display: flex;
@@ -14,13 +14,18 @@
 
 .date_item,
 .cal {
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+  justify-content: center;
   text-align: center;
   padding: 8px 20px;
   font-size: 16px;
   text-transform: uppercase;
   border-radius: 10px;
   background: #1c1f23;
+  min-width: 90px;
+  min-height: 105px;
 }
 
 .date_item p {
@@ -30,9 +35,8 @@
 .date_item:hover,
 .cal:hover {
   color: #e3000b;
-  transition: 1s;
+  transition: 0.5s;
 }
-
 .date_item:active,
 .cal:active {
   background: #e3000b;
@@ -48,7 +52,12 @@
   display: flex;
   align-items: center;
 }
+
 .cal_icon {
   height: 45px;
   width: 45px;
+}
+
+.wrapper {
+  position: relative;
 }

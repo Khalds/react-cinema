@@ -39,5 +39,10 @@
 
 .acc {
   font-size: 2em;
-  color: red;
+  color: #fff;
+}
+
+.acc:hover {
+  color: #e3000b;
+  transition: 1s;
 }
