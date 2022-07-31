@@ -38,10 +38,7 @@ function Movie() {
             return (
               <div className={styles.movie_item}>
                 <div className={styles.movie_img}>
-                  <img
-                    src="https://reelcinemas.com//MovieImages/HO00002863.jpg"
-                    alt="IMG"
-                  />
+                  <img src={movie.img} alt="IMG" />
                 </div>
                 <div className={styles.movie_info}>
                   {!open && (
@@ -57,10 +54,12 @@ function Movie() {
                       <div className={styles.movie_meta_data}>
                         <div className={styles.movie_time}>
                           {movie.length / 60 >= 1
-                            ? Math.floor(movie.length / 60) + "ч "
+                            ? Math.floor(movie.length / 60) < 10
+                              ? "0" + Math.floor(movie.length / 60) + "ч "
+                              : Math.floor(movie.length / 60)
                             : ""}
                           {movie.length % 60 > 0
-                            ? (movie.length % 60) + "мин"
+                            ? (movie.length % 60) + "м"
                             : ""}
                         </div>
                         <div className={styles.movie_country}>
@@ -81,7 +80,7 @@ function Movie() {
                   {open && (
                     <>
                       <ReactPlayer
-                        url="https://www.youtube.com/watch?v=pAr7v_9I78s"
+                        url={movie.trailer}
                         playing={true}
                         controls={false}
                         width="100%"

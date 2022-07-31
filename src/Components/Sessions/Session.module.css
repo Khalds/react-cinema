@@ -1,39 +1,51 @@
 .Sessions {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 0;
 }
 
 .hall {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.cards_conteiner {
+.cards_container {
   display: flex;
+  gap: 20px;
 }
 
 .card {
-  width: 30%;
-  margin: 3% 1%;
-  padding: 2%;
-  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 32%;
+  border-radius: 10px;
   background: #212324;
+  padding: 20px;
 }
 
 .card_middle_part {
   display: flex;
-  margin: 20px 0px;
+  gap: 10px;
 }
 
-.img_conteiner img {
-  height: 200px;
-  border-radius: 15px;
+.img_container img {
+  border-radius: 10px;
+  width: 150px;
+  height: 220px;
 }
 
-.genre_time_conteiner {
+.genre_time_container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0% 2%;
+  padding: 10px;
 }
 
 .genre {
@@ -42,48 +54,54 @@
 }
 .time_limitation {
   height: 5vh;
-  width: 200px;
+  width: 150px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid #808189;
+  border: 1px solid #fff;
   border-radius: 20px;
-  font-size: 1em;
+  font-size: 14px;
   font-weight: 600;
+  color: #e3000b;
 }
 
 .time {
-  width: 40%;
+  width: 60%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   background-color: white;
-  color: #808189;
+  color: #000;
 }
 
 .limitation {
-  width: 33%;
+  flex: 1;
   text-align: center;
-  border-right: 2px solid #808189;
 }
 
-.cinema {
-  width: 23%;
-  text-align: center;
-  color: #e3000b;
-}
-
-.button {
+.Sessions button {
   width: 100%;
-  text-align: center;
+  background-color: #e3000b;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.Sessions button:hover {
+  background-color: #fff;
+  color: #e3000b;
+  transition: 1.5s;
+  box-shadow: rgba(255, 0, 0, 0.116) 0px 7px 29px 0px;
 }
 
 .genre {
   font-size: 1em;
   line-height: 1.6em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 2%;
   font-style: italic;
 }

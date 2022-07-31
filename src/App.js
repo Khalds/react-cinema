@@ -8,15 +8,11 @@ import "./App.css"
 import BookingPage from "./pages/Bookingpage/Bookingpage"
 import Sessionspage from "./pages/Sessionspage/Sessionspage"
 import Movie from "./pages/Movie/Movie"
-import Basket from "./Components/Basket/Basket";
+import Basket from "./Components/Basket/Basket"
 
 import AboutUsPages from "./pages/AboutUs/AboutUsPages"
 import Authorization from "./pages/Authorization/AuthorizationPages"
 import Registration from "./pages/Registration/RegistrationPages"
-
-import Sessionspage from "./pages/Sessionspage/Sessionspage"
-import Movie from "./pages/Movie/Movie"
-import Bookingpage from "./pages/Bookingpage/Bookingpage"
 
 function App() {
   return (
@@ -30,7 +26,6 @@ function App() {
         <Route path="/contact" element={<Contacts />} />
         <Roite path="/aboutus" element={<Aboutus />} /> */}
 
-        <Route path="/booking" element={<Bookingpage />} />
         <Route path="/cinema" element={<Cinema />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/personal" element={<Personal />} />
