@@ -30,8 +30,8 @@
   flex-direction: column;
   background-color: #b6b6b6f0;
   color: rgb(0, 0, 0);
-  height: 45%;
-  width: 85%;
+  height: 50%;
+  width: 100%;
   bottom: 0;
   border-radius: 1em 1em;
   transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);

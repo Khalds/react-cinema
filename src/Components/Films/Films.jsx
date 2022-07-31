@@ -16,10 +16,9 @@ const Films = () => {
     dispatch(getMovies());
   }, [dispatch]);
 
-  const filteredBooks = movies.filter((item) => {
+  const filteredMovies = movies.filter((item) => {
     return item.name.toLowerCase().includes(value.toLowerCase());
   });
-
 
   return (
     <>
@@ -34,13 +33,13 @@ const Films = () => {
           />
         </div>
 
-        {!filteredBooks.length ? (
+        {!filteredMovies.length ? (
           <div className={style.sector_clear}>
             <h2>Ничего не найдено...</h2>
           </div>
         ) : (
           <div className={style.netCardFilms}>
-            {filteredBooks.map((item) => {
+            {filteredMovies.map((item) => {
               return (
                 <Link to={`/movie/${item._id}`}>
                   <CardFilm
@@ -48,6 +47,8 @@ const Films = () => {
                     name={item.name}
                     img={item.img}
                     limitation={item.limitation}
+                    genresId={item.genre}
+                    movie={item}
                   />
                 </Link>
               );

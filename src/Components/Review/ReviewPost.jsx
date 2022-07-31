@@ -8,6 +8,7 @@ const ReviewPost = () => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState("");
   const reviews = useSelector((state) => state.reviewReducer.reviews);
+  // const token = useSelector((state) => state.application.token);
 
   const handleAddComment = () => {
     if (comment.trim().length) {
@@ -24,13 +25,13 @@ const ReviewPost = () => {
     <div className={style.comments_render}>
       <div className={style.render_field}>
         <div className={style.comment_avatar}>
-          {
+          
             <img
               src={"https://cdn-icons-png.flaticon.com/512/147/147140.png"}
               alt="avatar"
               className={style.image_config}
             />
-          }
+         
         </div>
         <div className={style.comments_field}>
           <textarea

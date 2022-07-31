@@ -7,7 +7,7 @@
   margin: auto;
   padding: 0.65%;
   padding-left: 2%;
-  border-bottom: 2px solid rgb(6, 28, 110);
+  border-bottom: 2px solid rgb(88, 88, 88);
   margin-top: 2%;
 }
 .header_comment_user {
@@ -32,13 +32,13 @@
 }
 .name_comment_user {
   font-weight: 600;
-  color: #222;
+  color: rgb(255, 255, 255);
   align-items: center;
   margin-right: 8px;
 }
 .data_comment_user {
   font-size: 75%;
-  color: #6f6f6f;
+  color: #ffffff;
   line-height: 150%;
   margin-left: 1%
 }
@@ -62,7 +62,7 @@
   padding-top: 1%;
 }
 .delete_btn_comment_user_disabled:hover {
-  color: rgb(175, 175, 175);
+  color: rgb(255, 255, 255);
 }
 .text_comment_user {
   text-align: justify;
@@ -70,12 +70,13 @@
   padding: 0.6% 0;
   margin: auto;
   word-break: break-all;
+  color:rgb(255, 255, 255)
 }
 .favoriteFalse {
   font-size: 45px;
   margin-left: 20px;
   padding: 0;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 .favoriteTrue {
@@ -88,7 +89,7 @@
   padding-top: 25px;
 }
 .favoriteFalse:hover {
-  color: #000000;
+  color: #ffffff;
 }
 .favoriteTrue:hover {
   color: orange;
@@ -154,7 +155,7 @@ width: 10%;
   cursor: pointer;
   border: 2px solid transparent;
   float: right;
-  margin: 1%;
+  margin: 1% 3% 1% 0;
 }
 
 .titleContainer {
