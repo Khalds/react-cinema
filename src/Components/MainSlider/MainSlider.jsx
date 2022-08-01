@@ -15,46 +15,49 @@ const MainSlider = ({ movies }) => {
   return (
     <div className={styles.Slider}>
       <Slider asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
-        {movies.map((movie) => {
-          return (
-            <>
-              <div className={styles.main_slider}>
-                <div className={styles.block}></div>
-                <div className={styles.mainImg_conteiner}>
-                  <img
-                    src={movie.img_slider}
-                    alt="photo"
-                    className={styles.main_img}
-                  ></img>
-                </div>
-
-                <div className={styles.movie_preview}>
-                  <h1>{movie.name}</h1>
-                  <div className={styles.movie_data}>
-                    <div className={styles.time}>
-                      <IoMdTime />
-                      {movie.length / 60 >= 1
-                        ? Math.floor(movie.length / 60) + "ч "
-                        : ""}
-                      {movie.length % 60 > 0 ? (movie.length % 60) + "м" : ""}
-                    </div>
-                    <div className={styles.country}>
-                      <MdLanguage />
-                      {movie.country}
-                    </div>
+        {movies.map((movie,index) => {
+          if (index < 6) {
+            return (
+              <>
+                <div className={styles.main_slider}>
+                  <div className={styles.block}></div>
+                  <div className={styles.mainImg_conteiner}>
+                    <img
+                      src={movie.img_slider}
+                      alt="photo"
+                      className={styles.main_img}
+                    ></img>
                   </div>
-
-                  <p className={styles.movie}>{`${movie.description.slice(
-                    0,
-                    160
-                  )}...`}</p>
-                  <NavLink to={`/movie/${movie._id}`}>
-                    <button>Перейти</button>
-                  </NavLink>
+  
+                  <div className={styles.movie_preview}>
+                    <h1>{movie.name}</h1>
+                    <div className={styles.movie_data}>
+                      <div className={styles.time}>
+                        <IoMdTime />
+                        {movie.length / 60 >= 1
+                          ? Math.floor(movie.length / 60) + "ч "
+                          : ""}
+                        {movie.length % 60 > 0 ? (movie.length % 60) + "м" : ""}
+                      </div>
+                      <div className={styles.country}>
+                        <MdLanguage />
+                        {movie.country}
+                      </div>
+                    </div>
+  
+                    <p className={styles.movie}>{`${movie.description.slice(
+                      0,
+                      160
+                    )}...`}</p>
+                    <NavLink to={`/movie/${movie._id}`}>
+                      <button>Перейти</button>
+                    </NavLink>
+                  </div>
                 </div>
-              </div>
-            </>
-          )
+              </>
+            )
+          }
+          
         })}
       </Slider>
       <div className={styles.secondray_slide}>
@@ -65,14 +68,17 @@ const MainSlider = ({ movies }) => {
           swipeToSlide={true}
           focusOnSelect={true}
         >
-          {movies.map((movie) => {
-            return (
-              <div className={styles.card}>
-                <div className={styles.sec_img_conteiner}>
-                  <img src={movie.img}></img>
+          {movies.map((movie, index) => {
+            if (index < 6) {
+
+              return (
+                <div className={styles.card}>
+                  <div className={styles.sec_img_conteiner}>
+                    <img src={movie.img}></img>
+                  </div>
                 </div>
-              </div>
-            )
+              )
+            }
           })}
         </Slider>
       </div>

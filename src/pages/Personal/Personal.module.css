@@ -73,14 +73,15 @@
   font-size: 15px;
  border-spacing: 0px;
  padding: 0px 15px;
- background-color: white;
- color: #b3000b;
+
+ color: white
 }
 
 .orders td {
   text-align: center;
   border-bottom: 1px solid grey;
-  color: black
+
+  color: white
 }
 
 tr:last-child {
@@ -91,7 +92,8 @@ tr:last-child {
   padding: 1% 0%;
   font-size: 1.6em;
   text-align: center;
-  color: #b3000b
+
+  color: white
 }
 
 .orders tr {
