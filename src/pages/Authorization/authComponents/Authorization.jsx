@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux/es/exports"
-import { auth } from "../../../features/Application/applicationSlice"
 import styles from "../../Authorization/authComponents/authorizationPage.module.css"
 import { Link } from "react-router-dom"
 
@@ -8,6 +7,8 @@ import { AiOutlineLock } from "react-icons/ai"
 import { HiOutlineMail } from "react-icons/hi"
 
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai"
+
+import { auth, usersData } from "../../../features/Application/applicationSlice"
 
 function Authorization() {
   const [email, setLogin] = useState("")
@@ -30,6 +31,7 @@ function Authorization() {
 
   const handleCome = () => {
     dispatch(auth({ email, password }))
+    dispatch(usersData())
     setLogin("")
     setPassword("")
   }
@@ -85,10 +87,14 @@ function Authorization() {
               >
                 Войти
               </button>
-            </div>
-            <div className={styles.authorization_link}>
-              <p>У вас нет аккаунта?</p>
-              <Link to="/signup">Зарегистрироваться</Link>
+              <div className={styles.authorization}>
+                <p>У вас нет аккаунта ?</p>{" "}
+                <p>
+                  <Link className={styles.authorization_link_text} to="/signup">
+                    Зарегистрироватся
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
