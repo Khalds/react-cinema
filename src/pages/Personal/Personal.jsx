@@ -1,28 +1,32 @@
-import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Footer from "../../Components/Footer/Footer";
-import Header from "../../Components/Header/Header";
-import { getBooking } from "../../features/Booking/bookingSlice";
-import { getHalls } from "../../features/Halls/hallSlice";
-import { getMovies } from "../../features/Movies/moviesSlice";
-import { getSessions } from "../../features/Sessions/sessionSlice";
-import styles from "./Personal.module.css";
-const Personal = () => {
-  const bookings = useSelector((state) => state.bookingReducer.bookings);
-  const sessions = useSelector((state) => state.sessionReducer.sessions);
-  const movies = useSelector((state) => state.movieReducer.movies);
-  const halls = useSelector((state) => state.hallReducer.halls);
-  const dispatch = useDispatch();
+import React from "react"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import Footer from "../../Components/Footer/Footer"
+import Header from "../../Components/Header/Header"
+import { getBooking } from "../../features/Booking/bookingSlice"
+import { getHalls } from "../../features/Halls/hallSlice"
+import { getMovies } from "../../features/Movies/moviesSlice"
+import { getSessions } from "../../features/Sessions/sessionSlice"
+import styles from "./Personal.module.css"
+import { usersData } from "../../features/Application/applicationSlice"
 
-  const user_id = localStorage.getItem("user");
+const Personal = () => {
+  const bookings = useSelector((state) => state.bookingReducer.bookings)
+  const sessions = useSelector((state) => state.sessionReducer.sessions)
+  const movies = useSelector((state) => state.movieReducer.movies)
+  const halls = useSelector((state) => state.hallReducer.halls)
+  const dispatch = useDispatch()
+
+  const user_id = useSelector((state) => state.application.user)
+  const users = useSelector((state) => state.application.users)
 
   useEffect(() => {
-    dispatch(getBooking());
-    dispatch(getSessions());
-    dispatch(getMovies());
-    dispatch(getHalls());
-  }, [dispatch]);
+    dispatch(getBooking())
+    dispatch(getSessions())
+    dispatch(getMovies())
+    dispatch(getHalls())
+    dispatch(usersData(user_id))
+  }, [dispatch])
 
   return (
     <div className={styles.border}>
@@ -39,8 +43,8 @@ const Personal = () => {
               alt="тут должна была быть фотoграфия..."
             ></img>
             <div className={styles.userName}>
-              <div className={styles.login}>login: Khalid</div>
-              <div className={styles.password}>Nick-Name: Khald</div>
+              <div className={styles.login}>login: {users?.login}</div>
+              <div className={styles.password}>Nick-Name: {users?.name}</div>
             </div>
           </div>
           <div className={styles.details}>
@@ -94,19 +98,19 @@ const Personal = () => {
                                             {booking.col + " место "}
                                           </td>
                                         </>
-                                      );
+                                      )
                                     }
                                   })}
                                 </>
-                              );
+                              )
                             }
                           })}
                         </>
-                      );
+                      )
                     }
                   })}
                 </tr>
-              );
+              )
             }
           })}
         </table>
@@ -139,7 +143,7 @@ const Personal = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Personal;
+export default Personal
