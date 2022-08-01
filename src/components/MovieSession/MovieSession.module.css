@@ -8,6 +8,10 @@
   gap: 40px;
 }
 
+.MovieSessions a {
+  text-decoration: none;
+}
+
 .MovieSessions:last-child {
   border: none;
 }

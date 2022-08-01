@@ -46,3 +46,19 @@
   color: #e3000b;
   transition: 1s;
 }
+.reclama img {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  z-index: 4;
+  width: 38%;
+}
+.reclama img:hover {
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.8);
+}
+.buttonEx {
+  border-radius: 200px;
+  margin-left: 69.5%;
+  margin-top: 4%;
+  z-index: 7;
+}

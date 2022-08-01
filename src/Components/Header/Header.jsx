@@ -1,11 +1,37 @@
-import React from "react"
-import styles from "./Header.module.css"
-import { VscAccount } from "react-icons/vsc"
-import { Link, NavLink } from "react-router-dom"
+import React, { useState } from "react";
+import styles from "./Header.module.css";
+import { VscAccount } from "react-icons/vsc";
+import { Link, NavLink } from "react-router-dom";
+
+import useTimeout from "../../useTimeout";
 
 const Header = () => {
+  const [activ, inactive] = useState(false);
+  const [img, setImg] = useState(null);
+  // useTimeout(() => {
+  //   setImg(reclama);
+  // }, 1000);
+
+  // useTimeout(() => {
+  //   setImg(null);
+  // }, 100000);
+  // const handleRemoveLogo = () => {
+  //   setImg(false);
+  // };
+
   return (
     <div className={styles.Header}>
+      <Link to="/movie/62e4f0c8f7283e57cdee84eb">
+        <div className={styles.reclama}>
+          <img src={img} alt=""></img>
+        </div>
+      </Link>
+      {/* {img && (
+        <button onClick={handleRemoveLogo} className={styles.buttonEx}>
+          ❎
+        </button>
+      )} */}
+
       <div className={styles.wrapper}>
         <div className={styles.logo}>
           <Link to="/">
@@ -29,11 +55,7 @@ const Header = () => {
                 Кинотеатры
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/contact" className={styles.list_item}>
-                Контакты
-              </NavLink>
-            </li>
+       
             <li>
               <NavLink to="/aboutus" className={styles.list_item}>
                 О компании
@@ -48,7 +70,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

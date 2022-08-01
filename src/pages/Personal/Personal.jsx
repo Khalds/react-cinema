@@ -9,16 +9,24 @@ import { getMovies } from "../../features/Movies/moviesSlice"
 import { getSessions } from "../../features/Sessions/sessionSlice"
 import styles from "./Personal.module.css"
 import { usersData } from "../../features/Application/applicationSlice"
+import { Link } from "react-router-dom"
+import { exit } from "../../features/Application/applicationSlice"
 
 const Personal = () => {
   const bookings = useSelector((state) => state.bookingReducer.bookings)
   const sessions = useSelector((state) => state.sessionReducer.sessions)
   const movies = useSelector((state) => state.movieReducer.movies)
   const halls = useSelector((state) => state.hallReducer.halls)
+
   const dispatch = useDispatch()
 
   const user_id = useSelector((state) => state.application.user)
   const users = useSelector((state) => state.application.users)
+  const handleExit = () => {
+    dispatch(exit())
+  }
+
+  console.log(users)
 
   useEffect(() => {
     dispatch(getBooking())
@@ -31,33 +39,41 @@ const Personal = () => {
   return (
     <div className={styles.border}>
       <Header />
+
       <div className={styles.wrapper}>
         <div>
           <h1 className={styles.personalPage}>Личный кабинет</h1>
+          <div className={styles.exitWrapper}>
+            <img
+              className={styles.exit}
+              src="https://cdn0.iconfinder.com/data/icons/thin-line-color-2/21/05_1-512.png"
+              alt="тут должна была быть фотoграфия..."
+              onClick={() => handleExit()}
+            ></img>
+          </div>
         </div>
         <div className={styles.user_info}>
           <div className={styles.user_data}>
-            <img
-              className={styles.avatar}
-              src="https://pngimage.net/wp-content/uploads/2019/05/location-icon-png-black-and-white-1.png"
-              alt="тут должна была быть фотoграфия..."
-            ></img>
+            <Link to="/">
+              <img
+                className={styles.avatar}
+                src="https://pngimage.net/wp-content/uploads/2019/05/location-icon-png-black-and-white-1.png"
+                alt="тут должна была быть фотoграфия..."
+              ></img>
+            </Link>
             <div className={styles.userName}>
               <div className={styles.login}>login: {users?.login}</div>
               <div className={styles.password}>Nick-Name: {users?.name}</div>
             </div>
           </div>
           <div className={styles.details}>
-            Хочу быть в курсе
+            <div className={styles.capabilities}>Ваши возможности</div>
             <div className={styles.description}>
-              Узнавай о новинках кино и специальных предложениях самым первым!
-              Еженедельно мы сообщаем о новинках кинопроката, эксклюзивных
-              показах, скидках и акциях.
+              Здесь вы можете посмотреть все ваши данные, о покупках и о личной
+              информации, или же если вам нужно получить Электронный билет,
+              можете нажать на кнопку, "Отправить" ниже в списке
             </div>
-            <div>
-              <input type="checkbox" className={styles.getEmail} />
-              Получать email-сообщения
-            </div>
+            <div></div>
           </div>
         </div>
         <table className={styles.orders}>

@@ -127,6 +127,9 @@ const application = createSlice({
       .addCase(usersData.fulfilled, (state, action) => {
         state.users = action.payload
       })
+      .addCase(exit.fulfilled, (state, action) => {
+        state.token = null
+      })
   },
 })
 

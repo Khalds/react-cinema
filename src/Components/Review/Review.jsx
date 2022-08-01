@@ -30,7 +30,7 @@ const token = useSelector((state) => state.application.token)
             </div>
             <div className={style.name_and_data_comment_user}>
               <div className={style.data_comment_user}>
-                {review.date.slice(0, 10) + " / " + review.date.slice(11, 19)}
+                {review.date + " / " + review.date}
               </div>
             </div>
           </div>

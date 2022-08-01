@@ -141,3 +141,106 @@
   top: 10%;
   right: 20%;
 }
+
+.ratingArea {
+  overflow: hidden;
+  width: 265px;
+  margin: 0 auto;
+  margin-top: 15%;
+}
+.ratingArea:not(:checked) > input {
+  display: none;
+}
+.ratingArea:not(:checked) > label {
+  float: right;
+  width: 42px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 32px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.ratingArea:not(:checked) > label:before {
+  content: "★";
+}
+.ratingArea > input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.ratingArea:not(:checked) > label:hover,
+.ratingArea:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+.ratingArea > input:checked + label:hover,
+.ratingArea > input:checked + label:hover ~ label,
+.ratingArea > input:checked ~ label:hover,
+.ratingArea > input:checked ~ label:hover ~ label,
+.ratingArea > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.ratingArea > label:active {
+  position: relative;
+}
+.allRating {
+  display: flex;
+  font-size: 20px;
+}
+
+.buttonStars {
+  display: flex;
+  margin-left: 52%;
+}
+
+.buttonSec {
+  cursor: pointer;
+}
+.clickSent {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: purple;
+}
+.clickSent {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-right: 90%;
+}
+
+.clickSent span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.clickSent span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.clickSent:hover span {
+  padding-right: 25px;
+}
+
+.clickSent:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.sentButton {
+  color: gray;
+}
+.sentedButton {
+  color: red;
+}
