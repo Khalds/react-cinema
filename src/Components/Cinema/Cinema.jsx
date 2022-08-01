@@ -26,7 +26,7 @@ const Cinema = () => {
           <div className={styles.content}>
             {cinema.map((cinem) => {
               return (
-                <Link to="/cinema/:id">
+                <Link to="/sessions">
                   <CardCinema
                     key={cinem._id}
                     img={cinem.img}

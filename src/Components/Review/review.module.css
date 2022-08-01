@@ -39,8 +39,8 @@
 }
 .data_comment_user {
   font-size: 75%;
-  color: #ffffff;
-  line-height: 150%;
+  color: #828181e3;
+  line-height: 160%;
   margin-left: 1%;
 }
 .delete_btn_comment_user {
@@ -50,10 +50,9 @@
   background-color: transparent;
   cursor: pointer;
   padding-top: 1%;
-}
-.delete_btn_comment_user:hover {
   color: red;
 }
+
 .delete_btn_comment_user_disabled {
   float: right;
   font-size: 190%;

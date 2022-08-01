@@ -31,6 +31,7 @@ function App() {
         <Route path="/signup" element={<Registration />} />
         <Route path="/signin" element={<Authorization />} />
         <Route path="/aboutUs" element={<AboutUsPages />} />
+        <Route path="/movies" element={<Films />} />
       </Routes>
     </div>
   )
