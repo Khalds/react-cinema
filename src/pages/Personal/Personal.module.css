@@ -62,23 +62,55 @@
 
 .orders {
   color: rgb(244, 240, 240);
-
-  display: flex;
-  justify-content: space-evenly;
+  text-align: center;
   width: 100%;
   box-shadow: -19px 21px 58px 12px rgba(219, 42, 42, 0.41);
   background-color: #e3000b;
   border-radius: 30px;
   height: 400px;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
+  font-size: 15px;
+ border-spacing: 0px;
+ padding: 0px 15px;
+
+ color: white
 }
+
+.orders td {
+  text-align: center;
+  border-bottom: 1px solid grey;
+
+  color: white
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+.orders th {
+  padding: 1% 0%;
+  font-size: 1.6em;
+  text-align: center;
+
+  color: white
+}
+
+.orders tr {
+  border-bottom: 2px solid;
+}
+
+
+.orders > tr:last-child > td {
+  border-bottom: 0;
+}
+
 .ticket {
   height: 100px;
   width: 100px;
   cursor: pointer;
   display: flex;
-  padding-top: 20px;
+ 
 }
 
 .count {

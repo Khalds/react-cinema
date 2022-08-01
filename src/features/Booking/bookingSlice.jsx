@@ -4,6 +4,7 @@ const initialState = {
   bookings: [],
   chosedSeats: [],
   isBusy: false,
+  
 };
 
 export const getBooking = createAsyncThunk("get/booking", async (thunkAPI) => {
