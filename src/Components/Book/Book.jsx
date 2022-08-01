@@ -5,7 +5,7 @@ import {
   getSessionById,
   getSessions,
 } from "../../features/Sessions/sessionSlice";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 import { MdOutlineChair } from "react-icons/md";
@@ -19,6 +19,7 @@ import { getMovies } from "../../features/Movies/moviesSlice"
 
 const Book = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const session = useSelector((state) => state.sessionReducer.session);
   const bookings = useSelector((state) => state.bookingReducer.bookings);
@@ -36,7 +37,9 @@ const Book = () => {
 
   const handleBuy = (arr) => {
     dispatch(createBooking(arr));
-    setSum(sum + session.hall.seatPrice);
+      setTimeout(() => {
+        navigate("/personal")
+      }, 1000)
   };
 
   const handleChange = (row, col, session1, userId) => {
@@ -92,14 +95,14 @@ const Book = () => {
               </h5>
             </div>
             <div className={styles.transition}>
-              <NavLink to="/personal" className={styles.button_text}>
+          
                 <button
                   disabled={(chosedSeats.length > 0 && token)? false : true}
                   onClick={() => handleBuy(chosedSeats)}
                 >
                   Оплатить {session && sum} ₽
                 </button>
-              </NavLink>
+         
             </div>
           </div>
         </div>

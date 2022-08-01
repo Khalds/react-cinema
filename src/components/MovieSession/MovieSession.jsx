@@ -7,6 +7,7 @@ import { MdChair } from "react-icons/md"
 import { GoScreenFull } from "react-icons/go"
 import { ImTicket } from "react-icons/im"
 import { getSessions } from "../../features/Sessions/sessionSlice"
+import { NavLink } from "react-router-dom"
 
 function MovieSession({ hall, value }) {
   const movies = useSelector((state) => state.movieReducer.movies)
@@ -79,17 +80,19 @@ function MovieSession({ hall, value }) {
                       {movie.limitation}+
                     </div>
                   </div>
-                  <div className={styles.movie_hall_inf}>
-                    <div className={styles.movie_hall_num}>
-                      <GoScreenFull /> {hall.name}
+                  <NavLink to={`/booking/${session._id}`}>
+                    <div className={styles.movie_hall_inf}>
+                      <div className={styles.movie_hall_num}>
+                        <GoScreenFull /> {hall.name}
+                      </div>
+                      <div className={styles.movie_seats}>
+                        <MdChair /> {hall.seats}
+                      </div>
+                      <div className={styles.movie_seat_price}>
+                        <ImTicket /> {hall.seatPrice}p
+                      </div>
                     </div>
-                    <div className={styles.movie_seats}>
-                      <MdChair /> {hall.seats}
-                    </div>
-                    <div className={styles.movie_seat_price}>
-                      <ImTicket /> 150Р
-                    </div>
-                  </div>
+                  </NavLink>
                 </div>
               )
           }

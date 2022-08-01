@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Movie.module.css";
-import { Link, NavLink, useParams } from "react-router-dom";
-import Calend from "../../Components/Calend/Calend";
-import { useDispatch, useSelector } from "react-redux";
-import { getMovies } from "../../features/Movies/moviesSlice";
-import ReactPlayer from "react-player";
-import ReviewPost from "../../Components/Review/ReviewPost";
+import React, { useEffect, useState } from "react"
+import styles from "./Movie.module.css"
+import { NavLink, useParams } from "react-router-dom"
 
-import { BsFillPlayFill } from "react-icons/bs";
-import { CgClose } from "react-icons/cg";
-import MovieSessionList from "../../Components/MovieSessionList/MovieSessionList";
-import { IoMdTime } from "react-icons/io";
-import { MdLanguage } from "react-icons/md";
-import Footer from "../../Components/Footer/Footer";
-import Header from "../../Components/Header/Header";
+import Calend from "../../Components/Calend/Calend"
+import { useDispatch, useSelector } from "react-redux"
+import { getMovies } from "../../features/Movies/moviesSlice"
+import ReactPlayer from "react-player"
+import ReviewPost from "../../Components/Review/ReviewPost"
+
+import { BsFillPlayFill } from "react-icons/bs"
+import { CgClose } from "react-icons/cg"
+import MovieSessionList from "../../Components/MovieSessionList/MovieSessionList"
+import { IoMdTime } from "react-icons/io"
+import { MdLanguage } from "react-icons/md"
+import Footer from "../../Components/Footer/Footer"
+import Header from "../../Components/Header/Header"
+
+import { Link } from "react-scroll"
 
 function Movie() {
-  const movies = useSelector((state) => state.movieReducer.movies);
-  const genres = useSelector((state) => state.genreReducer.genres);
+  const movies = useSelector((state) => state.movieReducer.movies)
+  const genres = useSelector((state) => state.genreReducer.genres)
 
-  const [value, onChange] = useState(new Date());
+  const [value, onChange] = useState(new Date())
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
-  const { id } = useParams();
+  const { id } = useParams()
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getMovies());
-  }, [dispatch]);
+    dispatch(getMovies())
+  }, [dispatch])
 
   return (
     <>
       <Header />
       <div className={styles.Movie}>
         <div className={styles.back_home}>
-          <Link to="/"> &#x25C4; Все фильмы</Link>
+          <NavLink to="/"> &#x25C4; Все фильмы</NavLink>
         </div>
         <div className={styles.wrapper}>
           {movies.map((movie) => {
@@ -53,7 +56,7 @@ function Movie() {
                         <div className={styles.movie_genre}>
                           {genres.map((genre) => {
                             if (movie.genre.includes(genre._id)) {
-                              return <p>{genre.name}</p>;
+                              return <p>{genre.name}</p>
                             }
                           })}
                         </div>
@@ -97,11 +100,11 @@ function Movie() {
                       </>
                     )}
                     <div className={styles.movie_actions}>
-                      <NavLink to="/sessions">
+                      <Link to="movieSession" smooth={true} duration={1000}>
                         <button className={styles.btn_ticket}>
                           BUY TICKET
                         </button>
-                      </NavLink>
+                      </Link>
                       <button
                         onClick={(e) => setOpen(!open)}
                         className={styles.btn_play}
@@ -112,20 +115,20 @@ function Movie() {
                     </div>
                   </div>
                 </div>
-              );
+              )
           })}
         </div>
 
         <Calend value={value} onChange={onChange} />
 
-        <div className={styles.MovieSession}>
+        <div id="movieSession" className={styles.MovieSession}>
           <MovieSessionList value={value} />
         </div>
       </div>
       <ReviewPost />
       <Footer />
     </>
-  );
+  )
 }
 
-export default Movie;
+export default Movie

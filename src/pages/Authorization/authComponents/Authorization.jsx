@@ -87,14 +87,10 @@ function Authorization() {
               >
                 Войти
               </button>
-              <div className={styles.authorization}>
-                <p>У вас нет аккаунта ?</p>{" "}
-                <p>
-                  <Link className={styles.authorization_link_text} to="/signup">
-                    Зарегистрироватся
-                  </Link>
-                </p>
-              </div>
+            </div>
+            <div className={styles.authorization_link}>
+              <p>У вас нет аккаунта?</p>
+              <Link to="/signup">Зарегистрироваться</Link>
             </div>
           </div>
         </div>
