@@ -11,7 +11,7 @@ const Basket = () => {
   const chosedSeats = useSelector((state) => state.bookingReducer.chosedSeats);
   const dispatch = useDispatch()
 
-   console.log(chosedSeats)
+ 
 
   const handleClick = (arr) => {
       dispatch(createBooking(arr))

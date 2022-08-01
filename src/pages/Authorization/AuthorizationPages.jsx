@@ -7,6 +7,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 const AuthorizationPages = () => {
   const signingnIn = useSelector((state) => state.application.signingnIn);
 
+
   if (signingnIn) {
     return (
       <div className={styles.loading_block}>

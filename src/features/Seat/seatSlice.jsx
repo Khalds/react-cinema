@@ -20,7 +20,7 @@ export const makeBooking = createAsyncThunk(
   "make/booking",
   async (id, thunkAPI) => {
     try {
-   console.log(id)
+ 
       const res = await fetch(`http://localhost:4000/seat/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -29,7 +29,7 @@ export const makeBooking = createAsyncThunk(
         }),
       });
       const data = await res.json();
-      console.log(data)
+    
 
       return data;
     } catch (error) {
@@ -63,8 +63,7 @@ export const seatSlice = createSlice({
         state.seats = state.seats.map((element) => {
           
           if (element._id === action.payload._id) {
-            console.log(action.payload)
-            console.log(123)
+         
             return action.payload;
           }
           return element;

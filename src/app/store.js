@@ -5,7 +5,7 @@ import sessionSlice from "../features/Sessions/sessionSlice"
 import hallSlice from "../features/Halls/hallSlice"
 import bookingSlice from "../features/Booking/bookingSlice"
 import seatSlice from "../features/Seat/seatSlice"
-=======
+// =======
 import cinemaSlice from "../features/Cinema/cinemaSlice"
 import application from "../features/Application/applicationSlice"
 
@@ -16,7 +16,7 @@ export const store = configureStore({
     sessionReducer: sessionSlice,
     hallReducer: hallSlice,
     bookingReducer: bookingSlice,
-    seatReducer: seatSlice
+    seatReducer: seatSlice,
     cinemaReducer: cinemaSlice,
     application: application
   },

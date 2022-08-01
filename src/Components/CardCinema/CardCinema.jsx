@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./cardCinema.module.css";
 
 const CardCinema = ({ img, title, amountHall, placesHall, mood }) => {
-  console.log(img   );
+  
   return (
     <div className={styles.flexDiv}>
       <div className={styles.cinemaWrapperShadow}>

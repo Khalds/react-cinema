@@ -4,6 +4,8 @@ const initialState = {
   signingIn: false,
   authError: null,
   registrError: null,
+  users: null,
+
 
   token: localStorage.getItem("token"),
   user: localStorage.getItem("user"),
@@ -27,7 +29,7 @@ export const createUser = createAsyncThunk(
         },
       });
       const data = await res.json();
-      console.log(data);
+      
       if (data.message) {
         return thunkAPI.rejectWithValue(data.message);
       } else {
@@ -57,6 +59,7 @@ export const auth = createAsyncThunk(
       } else {
         localStorage.setItem("token", data.accessToken);
         localStorage.setItem("user", data.user.id);
+        
      
         return thunkAPI.fulfillWithValue(data);
       }
@@ -66,6 +69,34 @@ export const auth = createAsyncThunk(
     }
   }
 );
+export const usersData = createAsyncThunk(
+ 
+  "login/get",
+  async (id, thunkAPI) => {
+     const state = thunkAPI.getState()
+    try {
+      const res = await fetch(`http://localhost:4000/getUsers/${id}`, {
+        headers: {
+          Authorization: `Bearer ${state.application.token}`
+        }
+      });
+      const data = await res.json();
+     
+      
+      if (data.error) {
+        return thunkAPI.rejectWithValue(data.error);
+      } else {
+
+        return thunkAPI.fulfillWithValue(data);
+      }
+    } catch (error) {
+      
+       thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+
 
 export const exit = createAsyncThunk("exit", async (_, thunkAPI) => {
   localStorage.removeItem("token");
@@ -82,6 +113,7 @@ const application = createSlice({
         state.token = action.payload.token;
         state.user = action.payload.user
         state.registered = true
+        state.registrError = 1
         
        
       })
@@ -90,7 +122,7 @@ const application = createSlice({
         state.registrError = null
       })
       .addCase(createUser.rejected, (state, action) => {
-        console.log(action.payload);
+    
         state.registrError = action.payload
         state.signingUp = false
       });
@@ -98,7 +130,7 @@ const application = createSlice({
       builder
       .addCase(auth.fulfilled, (state, action) => {
         state.signingIn = false
-      state.token =  state.token =  action.payload.token
+        state.token =   action.payload.token
         state.authError = null
         state.user = action.payload.user.id
 
@@ -112,7 +144,13 @@ const application = createSlice({
         state.authError  = action.payload
         state.signingIn = false
         state.token = null
-      })
+      });
+
+      builder 
+      .addCase(usersData.fulfilled, (state, action) => {
+      state.users = action.payload
+      },)
+    
   }
 
 });

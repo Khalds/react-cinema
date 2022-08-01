@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { auth } from "../../../features/Application/applicationSlice";
+import { auth, usersData } from "../../../features/Application/applicationSlice";
 import styles from "../../Authorization/authComponents/authorizationPage.module.css";
 import email_log from "../../../images/email.png";
 import password_img from "../../../images/privacy.png";
@@ -13,7 +13,7 @@ function Authorization() {
   const dispatch = useDispatch();
   const error_block = useSelector((state) => state.application.authError);
   const [eye, setEye] = useState(false);
-  const [error_blo, setError] = useState(error_block);
+
 
   const toggleBtn = () => {
     setEye((prevState) => !prevState);
@@ -29,15 +29,12 @@ function Authorization() {
 
   const handleCome = () => {
     dispatch(auth({ email, password }));
+    dispatch(usersData())
     setLogin("");
     setPassword("");
   };
 
-  setTimeout(() => {
-    if (error_blo) {
-      setError(null);
-    }
-  }, 2000);
+ 
 
   return (
     <>
@@ -83,7 +80,7 @@ function Authorization() {
                   )}
                 </button>
 
-                <div className={styles.error}>{error_blo}</div>
+                <div className={styles.error}>{error_block}</div>
               </div>
 
               <div>

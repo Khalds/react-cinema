@@ -5,12 +5,7 @@ const initialState = {
     session: null
 };
 
-export const getSessions = createAsyncThunk("get/sessions", async (id, thunkAPI) => {
-  try {
-    const res = await fetch("http://localhost:4000/session");
-    const data = await res.json();
-  sessions: [],
-}
+
 
 export const getSessions = createAsyncThunk(
   "get/sessions",
@@ -49,9 +44,6 @@ export const sessionSlice = createSlice({
     })
     .addCase(getSessionById.fulfilled, (state, action) => {
       state.session = action.payload})
-    builder.addCase(getSessions.fulfilled, (state, action) => {
-      state.sessions = action.payload
-    })
   },
 })
 

@@ -1,8 +1,23 @@
-import React from "react"
-import Footer from "../../Components/Footer/Footer"
-import Header from "../../Components/Header/Header"
-import styles from "./Personal.module.css"
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import Footer from "../../Components/Footer/Footer";
+import Header from "../../Components/Header/Header";
+import styles from "./Personal.module.css";
+import { useDispatch } from "react-redux/es/exports";
+import { usersData } from "../../features/Application/applicationSlice";
+
 const Personal = () => {
+  const dispatch = useDispatch();
+  const user_id = useSelector((state) => state.application.user);
+  const users = useSelector((state) => state.application.users);
+  
+
+
+
+  useEffect(() => {
+    dispatch(usersData(user_id));
+  }, [dispatch]);
+
   return (
     <div className={styles.border}>
       <Header />
@@ -18,8 +33,8 @@ const Personal = () => {
               alt="тут должна была быть фотoграфия..."
             ></img>
             <div className={styles.userName}>
-              <div className={styles.login}>login: Khalid</div>
-              <div className={styles.password}>Nick-Name: Khald</div>
+              <div className={styles.login}>login: {users?.login}</div>
+              <div className={styles.password}>Nick-Name: {users?.name}</div>
             </div>
           </div>
           <div className={styles.details}>
@@ -76,7 +91,7 @@ const Personal = () => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Personal
+export default Personal;

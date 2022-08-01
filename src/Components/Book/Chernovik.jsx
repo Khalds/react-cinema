@@ -29,7 +29,7 @@ const renderColumns = (row, column) => {
     // const handleClick = (row, column, session_id) => {
   //   dispatch(createBooking({ row, column, id }));
   //   dispatch(makeBusy());
-  //   console.log(row, column, id);
+  //  
   // };
 
   //j - column, i - row
